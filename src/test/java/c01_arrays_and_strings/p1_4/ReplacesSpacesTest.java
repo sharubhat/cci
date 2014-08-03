@@ -1,4 +1,4 @@
-package c01.arrays.and.strings.p1_4;
+package c01_arrays_and_strings.p1_4;
 
 import org.junit.After;
 import org.junit.Before;

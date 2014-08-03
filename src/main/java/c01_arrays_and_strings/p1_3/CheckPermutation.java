@@ -1,4 +1,4 @@
-package c01.arrays.and.strings.p1_3;
+package c01_arrays_and_strings.p1_3;
 
 import java.util.Arrays;
 

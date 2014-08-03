@@ -1,4 +1,4 @@
-package c01.arrays.and.strings.p1_1;
+package c01_arrays_and_strings.p1_1;
 
 /**
  * Created by sharath on 7/31/14.
