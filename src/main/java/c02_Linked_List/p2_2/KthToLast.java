@@ -5,10 +5,10 @@ import c02_Linked_List.LinkedList.Node;
 
 /**
  * Created by sharath on 8/4/14.
- * <p/>
+ *
  * Problem description:
  * Find last k elements of the list
- * <p/>
+ *
  * Questions to ask:
  * 1. Should I just print the nodes or return the LinkedList
  */
