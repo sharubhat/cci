@@ -1,14 +1,17 @@
 package c02_Linked_List.p2_1;
 
+import c02_Linked_List.LinkedList.LinkedList;
+import c02_Linked_List.LinkedList.Node;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by sharath on 8/3/14.
- * <p/>
+ *
  * Problem description:
  * Remove duplicates from unsorted linked list
- * <p/>
+ *
  * Questions to ask:
  * 1. Is this single linked list
  * 2. Can I use additional storage
@@ -16,10 +19,11 @@ import java.util.Set;
  */
 public class RemoveDupes {
     public void removeDupes(LinkedList list) {
+        if(list.isEmpty())
+            throw new IllegalArgumentException();
         Node prev = null;
         Node curr = list.head;
-        if(curr == null)
-            throw new IllegalArgumentException();
+
         Set<Integer> buffer = new HashSet<>();
         while (curr != null) {
             if (buffer.add(curr.data)) {

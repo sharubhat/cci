@@ -1,4 +1,4 @@
-package c02_Linked_List.p2_1;
+package c02_Linked_List.LinkedList;
 
 /**
  * Created by sharath on 8/4/14.

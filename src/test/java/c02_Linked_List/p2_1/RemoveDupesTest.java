@@ -1,5 +1,6 @@
 package c02_Linked_List.p2_1;
 
+import c02_Linked_List.LinkedList.LinkedList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
