@@ -27,6 +27,14 @@ public class LinkedList {
         head = n;
     }
 
+    public void insertAtEnd(int data) {
+        Node curr = head;
+        while(curr != null) {
+            curr = curr.next;
+        }
+        curr.next = new Node(data);
+    }
+
     public void display() {
         Node n = head;
         while (n != null) {

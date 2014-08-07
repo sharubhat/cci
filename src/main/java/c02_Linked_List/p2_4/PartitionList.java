@@ -7,7 +7,7 @@ import c02_Linked_List.LinkedList.Node;
  * Created by sharath on 8/4/14.
  *
  * Problem description:
- * Partition linkedlist around value x such that all nodes less than x comes before
+ * Partition linked list around value x such that all nodes less than x comes before
  * and all nodes greater than or equal to x
  */
 public class PartitionList {
