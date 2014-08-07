@@ -1,7 +1,5 @@
 package c02_Linked_List.LinkedList;
 
-import com.sun.tools.javac.util.Assert;
-
 /**
  * Created by sharath on 8/6/14.
  *
@@ -54,7 +52,8 @@ public class DoubleyLinkedList {
     }
 
     public DNode removeFirst() {
-        Assert.check(!isEmpty(), "Empty List");
+        if(!isEmpty())
+            throw new IndexOutOfBoundsException("Empty list");
         DNode curr = head;
         head = head.next;
         if(head != null)
@@ -81,7 +80,8 @@ public class DoubleyLinkedList {
     }
 
     public DNode removeLast(){
-        Assert.check(!isEmpty(), "Empty List");
+        if(!isEmpty())
+            throw new IndexOutOfBoundsException("Empty List");
         DNode curr = tail;
         tail = tail.prev;
         if(tail != null)
