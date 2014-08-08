@@ -20,10 +20,10 @@ public class Palindrome {
             slow = slow.next;
             fast = fast.next.next;
         }
-        // This is the case of off numbered list
+        // This is the case of odd numbered list
         // where slow has reached the middle element.
         // Just ignore the middle element by moving to next.
-        if(fast != null && fast.next == null) {
+        if(fast != null) {
             slow = slow.next;
         }
         while(slow != null) {
@@ -33,11 +33,5 @@ public class Palindrome {
             slow = slow.next;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList(new int[]{1, 2, 3, 2, 1});
-        Palindrome palindrome = new Palindrome();
-        System.out.println(palindrome.isPalindrome(list));
     }
 }
