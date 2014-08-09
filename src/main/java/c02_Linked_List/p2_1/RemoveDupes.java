@@ -16,11 +16,11 @@ import java.util.Set;
  * 1. Is this single linked list
  * 2. Can I use additional storage
  * Follow up question might be, remove without additional buffer
+ *
+ * Note: There is nothing to remove from empty list. Don't throw exception.
  */
 public class RemoveDupes {
     public void removeDupes(LinkedList list) {
-        if(list.isEmpty())
-            throw new IllegalArgumentException();
         Node prev = null;
         Node curr = list.head;
 
@@ -36,8 +36,6 @@ public class RemoveDupes {
     }
 
     public void noBufferRemoveDupes(LinkedList list) {
-        if(list.head == null)
-            throw new IllegalArgumentException();
         Node curr = list.head;
         while(curr != null) {
             Node runner = curr;
@@ -56,7 +54,7 @@ public class RemoveDupes {
         RemoveDupes r = new RemoveDupes();
         LinkedList list = new LinkedList(new int[]{5, 6, 3, 7, 4, 3, 0, 6, 1, 0});
         list.display();
-        r.removeDupes(list);
+        r.removeDupes(new LinkedList());
         list.display();
 
 
@@ -64,5 +62,6 @@ public class RemoveDupes {
         list.display();
         r.noBufferRemoveDupes(list);
         list.display();
+
     }
 }
