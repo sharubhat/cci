@@ -40,6 +40,36 @@ public class LinkedList {
         curr.next = new Node(data);
     }
 
+    public Node remove() {
+        if(isEmpty()) {
+            return head;
+        }
+        Node tmp = head;
+        head = head.next;
+        tmp.next = null;
+        return tmp;
+    }
+
+    public Node removeAtEnd() {
+        if(head == null) {
+            return head;
+        }
+        if(head.next == null) {
+            Node tmp = head;
+            head = null;
+            return tmp;
+        }
+
+        Node prev = null;
+        Node curr = head;
+        while(curr.next != null) {
+            prev = curr;
+            curr = curr.next;
+        }
+        prev.next = null;
+        return curr;
+    }
+
     public void reverse() {
         Node prev = null;
         Node curr = head;
@@ -84,7 +114,11 @@ public class LinkedList {
         list.reverse();
         list.display();
 
-        list.reverseRec().display();
+        list.remove().display();
+        list.display();
+        list.removeAtEnd().display();
+        list.display();
+        //list.reverseRec().display();
     }
 
 }
