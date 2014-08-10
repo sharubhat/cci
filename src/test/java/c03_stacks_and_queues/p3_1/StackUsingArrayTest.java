@@ -23,26 +23,24 @@ public class StackUsingArrayTest {
 
     @Test
     public void testPush() {
-        assertTrue(stack.push(1, 1));
-        assertFalse(stack.push(1, 1));
-        assertTrue(stack.push(1, 2));
-        assertTrue(stack.push(2, 1));
-        assertTrue(stack.push(2, 2));
-        assertTrue(stack.push(3, 1));
-        assertTrue(stack.push(3, 2));
-        assertTrue(stack.push(3, 3));
-        assertTrue(stack.push(3, 4));
-        assertTrue(stack.push(3, 5));
-        assertFalse(stack.push(3, 3));
+        assertEquals(1, stack.push(1, 1));
+        assertEquals(2, stack.push(1, 2));
+        assertEquals(1, stack.push(2, 1));
+        assertEquals(2, stack.push(2, 2));
+        assertEquals(1, stack.push(3, 1));
+        assertEquals(2, stack.push(3, 2));
+        assertEquals(3, stack.push(3, 3));
+        assertEquals(4, stack.push(3, 4));
+        assertEquals(5, stack.push(3, 5));
     }
 
     @Test(expected = StackOverflowError.class)
-    public void testPushFailure() {
-        assertTrue(stack.push(3, 1));
-        assertTrue(stack.push(3, 2));
-        assertTrue(stack.push(3, 3));
-        assertTrue(stack.push(3, 4));
-        assertTrue(stack.push(3, 5));
+    public void testPushOverflow() {
+        assertEquals(1, stack.push(3, 1));
+        assertEquals(2, stack.push(3, 2));
+        assertEquals(3, stack.push(3, 3));
+        assertEquals(4, stack.push(3, 4));
+        assertEquals(5, stack.push(3, 5));
         assertEquals(5, stack.size(3));
         stack.push(3, 6);
     }

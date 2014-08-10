@@ -21,25 +21,15 @@ public class StackUsingArray {
         this.store = new int[size];
     }
 
-    public boolean push(int stackNum, int item) {
-        if(exists(stackNum, item))
-            return false;
+    public int push(int stackNum, int item) {
         ensureCapacity(stackNum);
         store[size / 3 * (stackNum - 1) + (index[stackNum - 1]++) + 1] = item;
-        return true;
+        return item;
     }
 
     private void ensureCapacity(int stackNum) {
         if(index[stackNum - 1] >= (size / 3 - 1))
             throw new StackOverflowError("Fixed size stack");
-    }
-
-    private boolean exists(int stackNum, int item) {
-        for(int i = size / 3 * (stackNum - 1); i < size / 3 * stackNum; i++) {
-            if(store[i] == item)
-                return true;
-        }
-        return false;
     }
 
     public int size(int stackNum) {
