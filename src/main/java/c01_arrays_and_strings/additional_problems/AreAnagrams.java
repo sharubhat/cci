@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 1. Are all characters ASCII?
  *    If yes, there are only 256 characters
  */
-public class Anagrams {
+public class AreAnagrams {
     public boolean areAnagrams(String s1, String s2) {
         if(s1 != null && s2 != null
                 && !s1.isEmpty() && !s2.isEmpty()

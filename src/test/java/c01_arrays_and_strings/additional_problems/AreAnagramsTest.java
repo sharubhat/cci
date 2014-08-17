@@ -10,40 +10,40 @@ import static junit.framework.TestCase.assertTrue;
 /**
  * Created by sharath on 8/12/14.
  */
-public class AnagramsTest {
-    Anagrams anagrams;
+public class AreAnagramsTest {
+    AreAnagrams areAnagrams;
 
     @Before
     public void setUp() {
-        anagrams = new Anagrams();
+        areAnagrams = new AreAnagrams();
     }
 
     @Test
     public void testEmptyStrings() {
         assertFalse("Testing empty strings - areAnagrams",
-                anagrams.areAnagrams("", ""));
+                areAnagrams.areAnagrams("", ""));
         assertFalse("Testing empty strings - checkAnagrams",
-                anagrams.checkAnagrams("", ""));
+                areAnagrams.checkAnagrams("", ""));
     }
 
     @Test
     public void testAnagrams() {
         assertTrue("Testing anagrams - areAnagrams",
-                anagrams.areAnagrams("car", "rac"));
+                areAnagrams.areAnagrams("car", "rac"));
         assertTrue("Testing anagrams - checkAnagrams",
-                anagrams.checkAnagrams("car", "rca"));
+                areAnagrams.checkAnagrams("car", "rca"));
     }
 
     @Test
     public void testNonAnagrams() {
         assertFalse("Testing non-anagrams - areAnagrams",
-                anagrams.areAnagrams("card", "rac"));
+                areAnagrams.areAnagrams("card", "rac"));
         assertFalse("Testing non-anagrams - checkAnagrams",
-                anagrams.checkAnagrams("card", "rca"));
+                areAnagrams.checkAnagrams("card", "rca"));
     }
 
     @After
     public void tearDown() {
-        anagrams = null;
+        areAnagrams = null;
     }
 }
