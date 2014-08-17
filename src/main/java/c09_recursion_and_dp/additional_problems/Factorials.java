@@ -21,6 +21,7 @@ public class Factorials {
     }
 
     // tail recursive factorial
+    // This is just for understanding. Java does not optimize tail recursion like Scala
     public int factTR(int n) {
         if(n <= 0)
             throw new IllegalArgumentException("Negative number");

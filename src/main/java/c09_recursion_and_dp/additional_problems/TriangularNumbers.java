@@ -30,6 +30,8 @@ public class TriangularNumbers {
         return n + nthTNumber(n - 1);
     }
 
+    // tail recursion technique.
+    // This is just for understanding. Java does not optimize tail recursion like Scala
     public int nthTNum(int n) {
         if(n <= 0)
             throw new IllegalArgumentException("Only positive numbers are accepted.");
