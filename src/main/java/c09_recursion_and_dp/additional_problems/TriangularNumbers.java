@@ -40,6 +40,6 @@ public class TriangularNumbers {
         if(start > end)
             return acc;
         else
-            return start + nthTNum(start + 1, end, acc);
+            return nthTNum(start + 1, end, start + acc);
     }
 }
