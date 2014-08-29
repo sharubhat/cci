@@ -24,6 +24,7 @@ public class Tower {
 
     private Stack<Integer>[] towers;
 
+    @SuppressWarnings("unchecked")
     public Tower(int numOfDisks) {
         N = numOfDisks;
         towers = new Stack[4];
@@ -68,7 +69,7 @@ public class Tower {
             {
                 d2 = String.valueOf(towers[2].get(i));
             }
-            catch(Exception e){
+            catch (Exception e){
             }
             try
             {
