@@ -27,7 +27,7 @@ public class AnagramsTest {
 
     @Test
     public void testAnagrams() {
-        Set<String> results = new HashSet();
+        Set<String> results = new HashSet<>();
         results.add("cat");results.add("cta");
         results.add("act");results.add("atc");
         results.add("tca");results.add("tac");
