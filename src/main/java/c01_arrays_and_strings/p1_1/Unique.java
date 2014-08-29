@@ -12,19 +12,18 @@ package c01_arrays_and_strings.p1_1;
  */
 public class Unique {
     public boolean hasAllUniqueChars(String input) {
-        if(input == null || input.length() == 0)
-            throw new IllegalArgumentException();
-        if(input.length() > 265)
-            return false;
-        boolean[] charSet = new boolean[256];
-        for(int i = 0; i < input.length(); i++) {
-            int c = input.charAt(i);
-            if(charSet[c])
-                return false;
-            else
-                charSet[c] = true;
+        if(input != null && !input.isEmpty() && input.length() <= 265) {
+            boolean[] charSet = new boolean[256];
+            for (int i = 0; i < input.length(); i++) {
+                int c = input.charAt(i);
+                if (charSet[c])
+                    return false;
+                else
+                    charSet[c] = true;
+            }
+            return true;
         }
-        return true;
+        return false;
     }
 
 }

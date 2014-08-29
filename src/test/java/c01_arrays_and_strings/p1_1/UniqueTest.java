@@ -4,7 +4,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertTrue;
+
 
 public class UniqueTest {
     private static Unique unique;
@@ -24,14 +26,14 @@ public class UniqueTest {
         assertTrue("Test all unique", unique.hasAllUniqueChars("zhdkgs"));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void uniqueForNull() {
-        unique.hasAllUniqueChars(null);
+        assertFalse("Test for null string", unique.hasAllUniqueChars(null));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void uniqueForEmptyString() {
-        unique.hasAllUniqueChars("");
+        assertFalse("Test for empty string", unique.hasAllUniqueChars(""));
     }
 
     @After
