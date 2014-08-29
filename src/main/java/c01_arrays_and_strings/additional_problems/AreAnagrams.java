@@ -17,6 +17,8 @@ public class AreAnagrams {
         if(s1 != null && s2 != null
                 && !s1.isEmpty() && !s2.isEmpty()
                 && s1.length() == s2.length()) {
+            if(s1.length() == 1)
+                return s1.equals(s2);
             int[] charset = new int[256];
             for (int i = 0; i < s1.length(); i++) {
                 charset[s1.charAt(i)]++;
