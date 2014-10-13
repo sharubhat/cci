@@ -18,7 +18,7 @@ public class Anagrams {
 
     public Set<String> allAnagrams(String prefix, String s, Set<String> store) {
         int n = s.length();
-        if(n == 0)
+        if(s.isEmpty())
             store.add(prefix);
         else {
             for(int i = 0; i < n; i++) {

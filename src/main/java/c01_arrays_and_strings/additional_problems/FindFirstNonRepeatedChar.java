@@ -25,7 +25,7 @@ public class FindFirstNonRepeatedChar {
     }
 
     public char firstNonRepeatedChar(String s) {
-        if(s != null || !s.isEmpty()) {
+        if(s != null && !s.isEmpty()) {
             for(int i = 0; i < s.length(); i++) {
                 char c = s.charAt(i);
                 if(s.indexOf(c) == s.lastIndexOf(c)) {

@@ -7,6 +7,10 @@ import java.util.Stack;
 
 /**
  * Created by sharath on 8/7/14.
+ *
+ * Problem description:
+ * Check if the given link is a palindrome
+ *
  */
 public class Palindrome {
     public boolean isPalindrome(LinkedList list) {

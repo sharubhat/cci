@@ -19,12 +19,6 @@ public class DoubleyLinkedList {
     public DNode head;
     public DNode tail;
 
-    public DoubleyLinkedList() {
-        this.head = null;
-        this.tail = null;
-        this.count = 0;
-    }
-
     public boolean isEmpty() {
         return count == 0;
     }
@@ -52,7 +46,7 @@ public class DoubleyLinkedList {
     }
 
     public DNode removeFirst() {
-        if(!isEmpty())
+        if(isEmpty())
             throw new IndexOutOfBoundsException("Empty list");
         DNode curr = head;
         head = head.next;
@@ -80,7 +74,7 @@ public class DoubleyLinkedList {
     }
 
     public DNode removeLast(){
-        if(!isEmpty())
+        if(isEmpty())
             throw new IndexOutOfBoundsException("Empty List");
         DNode curr = tail;
         tail = tail.prev;
