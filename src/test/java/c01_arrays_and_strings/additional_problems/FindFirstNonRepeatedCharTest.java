@@ -21,6 +21,9 @@ public class FindFirstNonRepeatedCharTest {
         assertEquals("Testing empty strings",
                 '\0',
                 ffnr.firstNonRepeatedChar(""));
+        assertEquals("Testing empty strings using list",
+                '\0',
+                ffnr.firstNonRepeatedUsingList(""));
     }
 
     @Test
@@ -28,13 +31,19 @@ public class FindFirstNonRepeatedCharTest {
         assertEquals("Testing strings with all unique chars",
                 'g',
                 ffnr.firstNonRepeatedChar("golden"));
+        assertEquals("Testing strings with all unique chars using list",
+                'g',
+                ffnr.firstNonRepeatedUsingList("golden"));
     }
 
     @Test
     public void testStringWithDupes() {
         assertEquals("Testing strings with duplicate chars",
                 'e',
-                ffnr.firstNonRepeatedChar("racccear"));
+                ffnr.firstNonRepeatedChar("racecar"));
+        assertEquals("Testing strings with duplicate chars using list",
+                'e',
+                ffnr.firstNonRepeatedUsingList("raccccecar"));
     }
 
     @After
