@@ -20,9 +20,9 @@ public class AreAnagramsTest {
 
     @Test
     public void testEmptyStrings() {
-        assertFalse("Testing empty strings - areAnagrams",
+        assertTrue("Testing empty strings - areAnagrams",
                 areAnagrams.areAnagrams("", ""));
-        assertFalse("Testing empty strings - checkAnagrams",
+        assertTrue("Testing empty strings - checkAnagrams",
                 areAnagrams.checkAnagrams("", ""));
     }
 

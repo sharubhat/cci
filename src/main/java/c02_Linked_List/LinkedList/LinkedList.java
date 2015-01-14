@@ -11,7 +11,6 @@ public class LinkedList {
     }
 
     public LinkedList(int[] input) {
-        this();
         for (int i = input.length - 1; i >= 0; i--) {
             this.insert(input[i]);
         }
@@ -22,9 +21,7 @@ public class LinkedList {
     }
 
     public void insert(int data) {
-        Node n = new Node(data);
-        n.next = head;
-        head = n;
+        insert(new Node(data));
     }
 
     public void insert(Node n) {

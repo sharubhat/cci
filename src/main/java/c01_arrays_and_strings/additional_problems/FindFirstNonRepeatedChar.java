@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by sharath on 8/12/14.
  */
 public class FindFirstNonRepeatedChar {
-    // Don't get fooled by indexOf offerred by the string class.
+    // Don't get fooled by indexOf offered by the string class.
     // indexOf internally is using for loop. So this algorithm runs at O(n2)
     public char firstNonRepeatedChar(String s) {
         if(s != null && !s.isEmpty()) {
@@ -36,7 +36,7 @@ public class FindFirstNonRepeatedChar {
         }
         // O(n) time
         for(Map.Entry e : store.entrySet()) {
-            if(e.getValue() == 1) { // O(1) time
+            if((Integer)e.getValue() == 1) { // O(1) time
                 c = (Character) e.getKey();
                 break;
             }

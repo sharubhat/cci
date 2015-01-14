@@ -15,7 +15,6 @@ import java.util.Arrays;
 public class AreAnagrams {
     public boolean areAnagrams(String s1, String s2) {
         if(s1 != null && s2 != null
-                && !s1.isEmpty() && !s2.isEmpty()
                 && s1.length() == s2.length()) {
             if(s1.length() == 1)
                 return s1.equals(s2);
@@ -35,18 +34,9 @@ public class AreAnagrams {
     }
 
     public boolean checkAnagrams(String s1, String s2) {
-//        if(s1 != null && s2 != null
-//                && !s1.isEmpty() && !s2.isEmpty()
-//                && s1.length() == s2.length()) {
-//            return sorted(s1).equals(sorted(s2));
-//        }
-//        return false;
-
         return (s1 != null && s2 != null
-                && !s1.isEmpty() && !s2.isEmpty()
                 && s1.length() == s2.length()
-                && sorted(s1).equals(sorted(s2))
-        );
+                && sorted(s1).equals(sorted(s2)));
     }
 
     private String sorted(String s) {

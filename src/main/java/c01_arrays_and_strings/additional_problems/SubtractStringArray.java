@@ -8,13 +8,16 @@ import java.util.*;
 public class SubtractStringArray {
 
     public void subtract(String[] s1, String[] s2) {
-        // Arrays.list returns a List. This is an interface type.
+        // Arrays.asList returns a List. This is an interface type.
         // It can't be type casted to any concrete type such as ArrayList
         // So you need to create a new ArrayList from the list returned.
         List<String> list1 = new ArrayList<>(Arrays.asList(s1));
         List<String> list2 = new ArrayList<>(Arrays.asList(s2));
         list1.removeAll(list2);
         System.out.println(list1);
+
+        // if you want to return String array since args are so
+        // return list1.toArray(new String[list1.size()]);
     }
 
     public static void main(String[] args) {
