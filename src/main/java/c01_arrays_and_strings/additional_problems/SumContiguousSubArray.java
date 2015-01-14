@@ -17,11 +17,18 @@ public class SumContiguousSubArray {
     public int KadaneSum(int[] in) {
         if(in.length == 0)
             return 0;
-        int maxSoFar = 0;
         int maxEndingHere = 0;
+        int maxSoFar = 0;
 
         for(int i : in) {
+            // maxEndingHere + i can be less than i iff maxEndingHere is = 0
+            // Note that maxEndingHere can't be less than 0
+            // So the max at this point can be i or maxEndingHere + i
             maxEndingHere = Math.max(i, maxEndingHere + i);
+
+            // maxSoFar can be either a subarray that was discovered previously
+            // or the current subarray who's maxEndingHere is more than previous max
+            // and it's time to update the sum value
             maxSoFar = Math.max(maxSoFar, maxEndingHere);
         }
         // case of all negative numbers

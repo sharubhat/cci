@@ -9,8 +9,6 @@ public class DNode {
     public DNode prev;
     public DNode(int data) {
         this.data = data;
-        this.next = null;
-        this.prev = null;
     }
 
 }

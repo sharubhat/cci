@@ -1,0 +1,54 @@
+Common matching symbols
+------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+Regex      | Description
+--------------------------------------------------------------------------------------------------------------------
+.           | Matches any character.
+^regex      | Finds regex that match at the beginning of the line.
+regex$      | Finds regex that must match at the end of the line.
+[abc]       | Set definition, can match letter a or b or c.
+[abc][vz]   | Set definition, can match a or b or c followed by v or z.
+[^abc]      | When a caret appears as the first character inside square brackets, it negates the pattern.
+            | This can match any character other than a or b or c.
+[a-d1-7]    | Ranges: matches a letter between a and d and figures from 1 to 7, but not d1.
+X | Y       | Finds X or Y.
+XZ          | Finds X directly followed by Z.
+$           | Checks if a line end follows.
+--------------------------------------------------------------------------------------------------------------------
+
+Meta-characters
+---------------
+
+--------------------------------------------------------------------------------------------------------------------
+Regex      | Description
+--------------------------------------------------------------------------------------------------------------------
+\d          | Any digit, short for [0-9]
+\D          | A non-digit, short for [^0-9]
+\s          | A whitespace character, short for [\t\n\x0b\r\f]
+\S          | A non-whitespace character, short for [^\s]
+\w          | A word, short for [a-zA-Z0-9_]
+\W          | A non-word character [^\w]
+\S+         | Several non-whitespace characters
+\b          | Matches a word boundary where a word character is [a-zA-Z0-9_]
+            | Note: _ at the end matches underscore character in addition to lowercase, uppercase and numbers.
+--------------------------------------------------------------------------------------------------------------------
+
+Quantifier
+----------
+
+--------------------------------------------------------------------------------------------------------------------
+Regex       | Description                                           | Examples
+--------------------------------------------------------------------------------------------------------------------
+*           | Occurs zero or more times, is short for {0,}          | X* finds no or several letter X
+                                                                    | .* finds any character sequence
++           | Occurs one or more times, is short for {1,}           | X+ finds one or several letter X
+?           | Occurs no or one times, is short for {0,1}            | X? finds no or exactly one letter X
+{X}         | Occurs X number of times, {} describes the order      | \d{3} searches for three digits,
+            | of the preceding liberal                              | .{10} for any character sequence of length 10
+{X,Y}       | Occurs between X and Y times                          | \d{1,4} means \d must occur at least once and
+                                                                    | at the max 4 times
+*?          | ? after a qualifier is a reluctant quantifier.        |
+            | It tries to find the smallest match. This makes the   |
+            | regex stop at the first match                         |
+--------------------------------------------------------------------------------------------------------------------

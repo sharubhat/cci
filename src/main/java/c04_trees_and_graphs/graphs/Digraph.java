@@ -44,7 +44,7 @@ public class Digraph implements DigraphInterface<Integer> {
     }
 
     // Inserts edge from v to w.
-    // Constructs from v to w, if no such egde already exists and throws exception otherwise.
+    // Constructs from v to w, if no such edge already exists and throws exception otherwise.
     // Precondition: v, w are vertices in the current digraph.
     @SuppressWarnings("unchecked")
     @Override
