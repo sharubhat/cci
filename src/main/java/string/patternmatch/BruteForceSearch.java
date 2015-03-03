@@ -9,7 +9,7 @@ public class BruteForceSearch {
     private int n;
     private int m;
 
-    public void setString(String t, String p) {
+    public BruteForceSearch(String t, String p) {
         this.text = t.toCharArray();
         this.pattern = p.toCharArray();
         this.n = t.length();
@@ -29,11 +29,10 @@ public class BruteForceSearch {
     }
 
     public static void main(String[] args) {
-        BruteForceSearch bfs = new BruteForceSearch();
         String text = "Lorem ipsum dolor sit amet";
         String pattern = "ipsum";
 
-        bfs.setString(text, pattern);
+        BruteForceSearch bfs = new BruteForceSearch(text, pattern);
         int firstOccurPos = bfs.search();
         System.out.println("The text '" + pattern + "' is first found after the " + firstOccurPos + " position.");
     }
