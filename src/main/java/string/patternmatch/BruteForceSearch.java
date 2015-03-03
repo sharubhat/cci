@@ -4,26 +4,15 @@ package string.patternmatch;
  * Created by sharath on 10/24/14.
  */
 public class BruteForceSearch {
-    private char[] text;
-    private char[] pattern;
-    private int n;
-    private int m;
 
-    public BruteForceSearch(String t, String p) {
-        this.text = t.toCharArray();
-        this.pattern = p.toCharArray();
-        this.n = t.length();
-        this.m = p.length();
-    }
-
-    public int search() {
-        for(int i = 0; i < n - m; i++) {
-            int j = 0;
-            while(j < m && text[i + j] == pattern[j]) {
-                j++;
+    public int search(String text, String pattern) {
+        int n = text.length();
+        int m = pattern.length();
+        for(int i = 0; i < n - m; i++) {        // i is index for text and j is index for the pattern
+            for(int j = 0; j < m && text.charAt(i + j) == pattern.charAt(j); j++) {
+                if(j == m - 1)
+                    return i;
             }
-            if(j == m)
-                return i;
         }
         return -1;
     }
@@ -32,8 +21,8 @@ public class BruteForceSearch {
         String text = "Lorem ipsum dolor sit amet";
         String pattern = "ipsum";
 
-        BruteForceSearch bfs = new BruteForceSearch(text, pattern);
-        int firstOccurPos = bfs.search();
+        BruteForceSearch bfs = new BruteForceSearch();
+        int firstOccurPos = bfs.search(text, pattern);
         System.out.println("The text '" + pattern + "' is first found after the " + firstOccurPos + " position.");
     }
 }
