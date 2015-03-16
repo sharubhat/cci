@@ -1,8 +1,5 @@
 package c04_trees_and_graphs.other_problems;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Created by sharath on 8/13/14.
  *

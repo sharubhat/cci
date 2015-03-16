@@ -13,7 +13,7 @@ package c09_recursion_and_dp.recursion;
  */
 public class Factorials {
     public int fact(int n){
-        if(n <= 0)
+        if(n < 0)
             throw new IllegalArgumentException("Negative number");
         if(n == 0 || n == 1)
             return 1;
@@ -23,7 +23,7 @@ public class Factorials {
     // tail recursive factorial
     // This is just for understanding. Java does not optimize tail recursion like Scala
     public int factTR(int n) {
-        if(n <= 0)
+        if(n < 0)
             throw new IllegalArgumentException("Negative number");
         return factTR(1, n, 1);
     }
@@ -36,6 +36,16 @@ public class Factorials {
     }
 
     public int factDP(int n) {
-        return 0;
+        if(n < 0)
+            throw new IllegalArgumentException("Negative number");
+        if(n == 0 || n == 1)
+            return 1;
+        int[] facts = new int[n + 1];
+        facts[0] = 1;
+        facts[1] = 1;
+        for(int i = 2; i <= n; i++) {
+            facts[i] = i * facts[i - 1];
+        }
+        return facts[n];
     }
 }

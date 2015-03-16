@@ -8,11 +8,13 @@ package string.patternmatch;
  * So, if w is average length of key, then space required is RNw.
  */
 public class TrieST<V> {
+    private static final int R = 256;
+
     protected static class Node<V> {
         private V val;
         private Node<V>[] next = new Node[R];
     }
-    private static final int R = 256;
+
     private Node<V> root;
 
     public V get(String key) {

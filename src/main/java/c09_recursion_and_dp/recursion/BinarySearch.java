@@ -4,13 +4,12 @@ package c09_recursion_and_dp.recursion;
  * Recursive binary search
  * Created by sharath on 9/9/14.
  */
-public class BinarySearch {
-    public int binarySearch(Object[] items, Comparable target) {
+public class BinarySearch<V extends Comparable<V>> {
+    public int binarySearch(V[] items, V target) {
         return binarySearch(items, target, 0, items.length);
     }
 
-    @SuppressWarnings("unchecked")
-    private int binarySearch(Object[] items, Comparable target, int first, int last) {
+    private int binarySearch(V[] items, V target, int first, int last) {
         if(first > last)
             return -1;
         else {
