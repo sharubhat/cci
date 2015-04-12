@@ -1,5 +1,6 @@
 package corejavainterviewquestions;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -9,10 +10,16 @@ import static org.junit.Assert.assertThat;
  * Created by sharath on 3/15/15.
  */
 public class QueueTest {
+    private Queue queue;
+    @Before
+    public void setUp() {
+        this.queue = new Queue();
+    }
+
     // Queue has two methods which should be tested : add and remove. Stack has push and pop.
     @Test
     public void addingOneItemAndRemovingFromQueueWillReturnThatItem() throws Exception {
-        Queue queue = new Queue();
+
         queue.add("Item 1");
 
         assertThat(queue.remove(), is("Item 1"));
@@ -20,7 +27,6 @@ public class QueueTest {
 
     @Test
     public void addingMultipleItemsThenRemovingOneItemWillReturnFirstItem() throws Exception {
-        Queue queue = new Queue();
         queue.add("Item 1");
         queue.add("Item 2");
         queue.add("Item 3");
@@ -29,7 +35,6 @@ public class QueueTest {
 
     @Test
     public void addingThreeItemsRemovingTwoWillReturnItemOneThenTwo() throws Exception {
-        Queue queue = new Queue();
         queue.add("Item 1");
         queue.add("Item 2");
         queue.add("Item 3");
@@ -39,7 +44,6 @@ public class QueueTest {
 
     @Test
     public void multipleAddsAndRemovesInCorrectOrder() throws Exception {
-        Queue queue = new Queue();
         queue.add("Item 1");
         queue.add("Item 2");
         queue.add("Item 3");

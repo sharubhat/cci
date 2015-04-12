@@ -22,7 +22,7 @@ public class FindFirstNonRepeatedChar {
     }
 
     // Relatively faster approach O(n) time at the cost of additional space
-    public char firstNonRepeatedUsingList(String s) {
+    public char firstNonRepeatedUsingMap(String s) {
         Map<Character, Integer> store = new LinkedHashMap<>();
         char c = '\0';
         if(s != null && !s.isEmpty()) {

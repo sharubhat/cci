@@ -18,9 +18,7 @@ public class Queue {
         if(stackOne.isEmpty() && stackTwo.isEmpty())
             throw new NoSuchElementException("Empty queue");
         if(stackTwo.isEmpty()) {
-            while(!stackOne.isEmpty()) {
-                stackTwo.add(stackOne.pop());
-            }
+            swapStacks(stackOne, stackTwo);
         }
         return (String)stackTwo.pop();
     }

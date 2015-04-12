@@ -1,0 +1,31 @@
+Programming Test Overview
+
+To be successful as a developer at Salesforce.com you’ll need to be good at writing code.  The programming test is the best way we’ve found to determine if a candidate is adept at writing code.  It is realistic – rather than writing code on a white board, you have an editor and debugger and a good amount of time to analyze a problem and form a solution.
+
+You’ll be given 2 hours to complete the test. Please watch the clock and be prepared to wrap up your work at the appropriate time.
+
+You’ll find a description of the problem attached.  Please read the problem description carefully.  Here’s how your solution will be evaluated, in priority order (1 is highest priority)
+
+1 – Does the program have your name included in a comment?   We can have multiple interview candidates in at the same time so this is important!
+
+2 – Does the program compile and execute according to the problem description?
+
+3 – Is the program well designed?
+
+4 – Do you use data structures and algorithms that would allow your program to work under high volume – ie is your code scalable?
+
+5 – Is your code well formatted and easy to read?  Do you have sufficient comments?  Can the reviewer quickly determine how your program is organized and what you are trying to accomplish by each class / method?
+
+6 – Have you thoroughly tested all possible input combinations?
+
+Emailing the Results
+
+At the end of the 2 hours, or before the time agreed-upon with the administrator, please package your test code into one compressed file and email it as an attachment to the administrator. Please include any instruction on how to execute your program.
+
+Programming Environment
+
+At Salesforce.com, we use Java as our primary development language. However, if you are not comfortable coding in Java, feel free to use C++, C# or C to complete the programming test.
+
+An Eclipse project is available in a compressed ZIP file to get you started on the test. The project also includes the “prog.dat” – a sample input file for your test.
+
+The same file is also available as a stand-alone download if you’re taking the test in another language.

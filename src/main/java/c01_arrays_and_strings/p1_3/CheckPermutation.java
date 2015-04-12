@@ -22,12 +22,7 @@ public class CheckPermutation {
         Arrays.sort(arrS1);
         Arrays.sort(arrS2);
 
-        for(int i = 0; i < arrS1.length; i++) {
-            if(arrS1[i] != arrS2[i])
-                return false;
-        }
-
-        return true;
+        return Arrays.equals(arrS1, arrS2);
     }
 
     // Assuming the string is made up of only ASCII characters

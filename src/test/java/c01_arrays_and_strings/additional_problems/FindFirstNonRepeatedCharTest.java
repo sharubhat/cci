@@ -23,7 +23,7 @@ public class FindFirstNonRepeatedCharTest {
                 ffnr.firstNonRepeatedChar(""));
         assertEquals("Testing empty strings using list",
                 '\0',
-                ffnr.firstNonRepeatedUsingList(""));
+                ffnr.firstNonRepeatedUsingMap(""));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class FindFirstNonRepeatedCharTest {
                 ffnr.firstNonRepeatedChar("golden"));
         assertEquals("Testing strings with all unique chars using list",
                 'g',
-                ffnr.firstNonRepeatedUsingList("golden"));
+                ffnr.firstNonRepeatedUsingMap("golden"));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class FindFirstNonRepeatedCharTest {
                 ffnr.firstNonRepeatedChar("racecar"));
         assertEquals("Testing strings with duplicate chars using list",
                 'e',
-                ffnr.firstNonRepeatedUsingList("raccccecar"));
+                ffnr.firstNonRepeatedUsingMap("raccccecar"));
     }
 
     @After
