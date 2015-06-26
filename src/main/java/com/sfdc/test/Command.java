@@ -1,14 +1,23 @@
 package com.sfdc.test;
 
-import java.io.InputStream;
 import java.util.*;
 
 /**
- * Created by sharath on 4/7/15.
+ * A program to maintain software dependencies and installation stats.
+ * <p>
+ * Following commands are supported
+ * <ul>
+ * <li>DEPEND followed by two or more software names showing their dependency
+ * <li>INSTALL followed by a software to be installed
+ * <li>REMOVE followed by a software to be removed
+ * <li>LIST which lists the installed softwares in no particular order
+ * <ul/>
  *
+ * <p>
+ *
+ * Created by sharath on 4/7/15.
  * @author Sharath Bhat
  * @email sharath_bhat@icloud.com
- *
  */
 public class Command {
 

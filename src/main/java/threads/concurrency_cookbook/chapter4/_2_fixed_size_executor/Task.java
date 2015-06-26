@@ -1,4 +1,4 @@
-package threads.concurrency_cookbook.chapter4._1_thread_executor;
+package threads.concurrency_cookbook.chapter4._2_fixed_size_executor;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

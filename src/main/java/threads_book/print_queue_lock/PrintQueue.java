@@ -12,8 +12,8 @@ public class PrintQueue {
 
     public void print() {
         lock.lock();
-        System.out.printf("Printing... %s\n", Thread.currentThread().getName());
         try {
+            System.out.printf("Printing... %s\n", Thread.currentThread().getName());
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();

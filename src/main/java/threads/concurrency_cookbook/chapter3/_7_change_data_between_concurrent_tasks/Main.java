@@ -7,7 +7,7 @@ import java.util.concurrent.Exchanger;
 /**
  * Created by sharath on 2/6/15.
  */
-public class Core {
+public class Main {
     public static void main(String[] args) {
         List<String> buffer1 = new ArrayList<>();
         List<String> buffer2 = new ArrayList<>();

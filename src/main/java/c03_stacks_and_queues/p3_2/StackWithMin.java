@@ -42,4 +42,9 @@ public class StackWithMin extends Stack<Integer> {
     public int min() {
         return min.peek();
     }
+
+    @Override
+    public boolean equals(Object that) {
+        return super.equals(that);
+    }
 }

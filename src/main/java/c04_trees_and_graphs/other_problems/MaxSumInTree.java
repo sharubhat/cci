@@ -15,13 +15,13 @@ package c04_trees_and_graphs.other_problems;
  */
 public class MaxSumInTree {
 
-    class tNode {
-        public int data;
-        public boolean visited;
-        public int sum;
-        public tNode left;
-        public tNode right;
-    }
+//    class tNode {
+//        public int data;
+//        public boolean visited;
+//        public int sum;
+//        public tNode left;
+//        public tNode right;
+//    }
 //    public int[] findPath(tNode n) {
 //        int[] path = new int[4];
 //        Queue<tNode> q = new LinkedList<>();

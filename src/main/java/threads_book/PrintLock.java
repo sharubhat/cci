@@ -25,15 +25,16 @@ public class PrintLock implements Runnable {
     public void run() {
         while(true) {
             lock.lock();
-            if(count < 11) {
-                System.out.printf("%s - %d\n", Thread.currentThread().getName(), count);
-                count++;
-            }
-            else {
+            try {
+                if (count < 11) {
+                    System.out.printf("%s - %d\n", Thread.currentThread().getName(), count);
+                    count++;
+                } else {
+                    break;
+                }
+            } finally {
                 lock.unlock();
-                break;
             }
-            lock.unlock();
         }
     }
 
