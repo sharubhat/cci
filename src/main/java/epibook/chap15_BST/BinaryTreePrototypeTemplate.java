@@ -4,16 +4,16 @@ package epibook.chap15_BST;
  * Created by sharath on 6/29/15.
  */
 public class BinaryTreePrototypeTemplate {
-    public static class BinaryTreeNode<T> {
+    public static class BTNode<T> {
         private T data;
-        private BinaryTreeNode<T> left, right;
+        private BTNode<T> left, right;
 
-        public BinaryTreeNode() {}
+        public BTNode() {}
 
-        public BinaryTreeNode(T data) { this.data = data; }
+        public BTNode(T data) { this.data = data; }
 
-        public BinaryTreeNode(T data, BinaryTreeNode<T> left,
-                              BinaryTreeNode<T> right) {
+        public BTNode(T data, BTNode<T> left,
+                              BTNode<T> right) {
             this.data = data;
             this.left = left;
             this.right = right;
@@ -23,13 +23,13 @@ public class BinaryTreePrototypeTemplate {
 
         public void setData(T data) { this.data = data; }
 
-        public BinaryTreeNode<T> getLeft() { return left; }
+        public BTNode<T> getLeft() { return left; }
 
-        public void setLeft(BinaryTreeNode<T> left) { this.left = left; }
+        public void setLeft(BTNode<T> left) { this.left = left; }
 
-        public BinaryTreeNode<T> getRight() { return right; }
+        public BTNode<T> getRight() { return right; }
 
-        public void setRight(BinaryTreeNode<T> right) { this.right = right; }
+        public void setRight(BTNode<T> right) { this.right = right; }
 
         @Override
         public boolean equals(Object o) {
@@ -40,7 +40,7 @@ public class BinaryTreePrototypeTemplate {
                 return false;
             }
 
-            BinaryTreeNode that = (BinaryTreeNode)o;
+            BTNode that = (BTNode)o;
 
             if (data != null ? !data.equals(that.data) : that.data != null) {
                 return false;

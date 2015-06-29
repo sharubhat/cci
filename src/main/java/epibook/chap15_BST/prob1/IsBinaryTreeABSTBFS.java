@@ -1,6 +1,6 @@
 package epibook.chap15_BST.prob1;
 
-import epibook.chap15_BST.BinaryTreePrototypeTemplate.BinaryTreeNode;
+import epibook.chap15_BST.BinaryTreePrototypeTemplate.BTNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -11,17 +11,17 @@ import java.util.Queue;
 public class IsBinaryTreeABSTBFS {
 
     public static class QNode {
-        public BinaryTreeNode<Integer> node;
+        public BTNode<Integer> node;
         public Integer lower, higher;
 
-        public QNode(BinaryTreeNode<Integer> node, Integer lower, Integer higher) {
+        public QNode(BTNode<Integer> node, Integer lower, Integer higher) {
             this.node = node;
             this.higher = higher;
             this.lower = lower;
         }
     }
 
-    public static boolean isBinaryTreeBST(BinaryTreeNode<Integer> tree) {
+    public static boolean isBinaryTreeBST(BTNode<Integer> tree) {
         Queue<QNode> BFSQueue = new LinkedList<>();
         BFSQueue.add(new QNode(tree, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
@@ -44,12 +44,12 @@ public class IsBinaryTreeABSTBFS {
         // 3
         // 2 5
         // 1 4 6
-        BinaryTreeNode<Integer> tree = new BinaryTreeNode<>(3);
-        tree.setLeft(new BinaryTreeNode<>(2));
-        tree.getLeft().setLeft(new BinaryTreeNode<>(1));
-        tree.setRight(new BinaryTreeNode<>(5));
-        tree.getRight().setLeft(new BinaryTreeNode<>(4));
-        tree.getRight().setRight(new BinaryTreeNode<>(6));
+        BTNode<Integer> tree = new BTNode<>(3);
+        tree.setLeft(new BTNode<>(2));
+        tree.getLeft().setLeft(new BTNode<>(1));
+        tree.setRight(new BTNode<>(5));
+        tree.getRight().setLeft(new BTNode<>(4));
+        tree.getRight().setRight(new BTNode<>(6));
         // should output true.
         assert isBinaryTreeBST(tree);
         System.out.println(isBinaryTreeBST(tree));
