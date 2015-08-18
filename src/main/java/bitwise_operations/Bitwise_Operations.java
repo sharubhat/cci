@@ -9,7 +9,12 @@ public class Bitwise_Operations {
 
         Integer cInt = new Integer(c);
 
-        System.out.printf("Java int is %d bit. -- Integer.SIZE %n", Integer.SIZE);
+        System.out.println("One byte is 8 bits");
+        System.out.printf("Java char is %d bit or %d bytes. -- Character.SIZE or Character.SIZE/8 %n", Character.SIZE, Character.SIZE/8);
+        System.out.printf("Java int is %d bit or %d bytes. -- Integer.SIZE %n", Integer.SIZE, Integer.SIZE/8);
+        System.out.printf("Java float is %d bit or %d bytes. -- Float.SIZE %n", Float.SIZE, Float.SIZE/8);
+        System.out.printf("Java double is %d bit or %d bytes. -- Double.SIZE %n", Double.SIZE, Double.SIZE/8);
+
         System.out.printf("Number of one-bits in the two's complement " +
                 "binary representation of %c is %d -- Integer.bitCount(c) %n", c, Integer.bitCount(c));
         System.out.printf("ASCII value or byte value of %c is %d -- cInt.byteValue() %n", c, cInt.byteValue());

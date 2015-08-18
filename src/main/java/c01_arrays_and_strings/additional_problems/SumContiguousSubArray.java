@@ -47,6 +47,6 @@ public class SumContiguousSubArray {
     }
 
     public static void main(String[] args) {
-        new SumContiguousSubArray().KadaneSum(new int[]{-1, 2, 3, -3, 4});
+        System.out.println(new SumContiguousSubArray().KadaneSum(new int[]{-1, 2, 3, -3, 4}));
     }
 }

@@ -16,7 +16,7 @@ public class BinarySearch<V extends Comparable<V>> {
             int middle = first + (last - first) / 2;
             int compResult = target.compareTo(items[middle]);
             if(compResult == 0)
-                return compResult;
+                return middle;
             else if(compResult < 0) {
                 return binarySearch(items, target, first, middle - 1);
             } else {

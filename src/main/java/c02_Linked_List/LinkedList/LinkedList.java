@@ -69,31 +69,28 @@ public class LinkedList {
 
     public void reverse() {
         Node prev = null;
-        Node curr = head;
-        Node tmp = null;
-        while(curr != null) {
-            tmp = curr;
-            curr = curr.next;
+        while(head != null) {
+            Node tmp = head;
+            head = head.next;
             tmp.next = prev;
             prev = tmp;
         }
         head = prev;
     }
 
-    public LinkedList reverseRec() {
-        return reverseRecurse(head, new LinkedList());
+    public void revRec() {
+        this.head = revRecHelper(this.head, new LinkedList());
     }
 
-    // tail recursive
-    private LinkedList reverseRecurse(Node curr, LinkedList acc) {
-        if(curr == null) {
-            return acc;
-        }
+    // tal recursive.
+    private Node revRecHelper(Node head, LinkedList acc) {
+        if(head == null)
+            return acc.head;
         else {
-            Node tmp = curr;
-            curr = curr.next;
+            Node tmp = head;
+            head = head.next;
             acc.insert(tmp);
-            return reverseRecurse(curr, acc);
+            return revRecHelper(head, acc);
         }
     }
 

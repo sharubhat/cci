@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class Anagrams {
     public Set<String> allAnagrams(String s) {
-        return allAnagrams("", s, new HashSet<String>());
+        return allAnagrams("", s, new HashSet<>());
     }
 
     public Set<String> allAnagrams(String prefix, String s, Set<String> store) {

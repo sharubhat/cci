@@ -147,7 +147,7 @@ public class Node {
         /* stop when both buffer is empty and
            current is null, i.e. you have traversed all nodes
          */
-        while(!(buffer.isEmpty() && current == null)) {
+        while(!buffer.isEmpty() || current != null) {
             if(current != null) {
                 buffer.push(current);
                 current = current.left;

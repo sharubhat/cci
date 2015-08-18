@@ -13,29 +13,37 @@ public class LNode {
     private int data;
     private boolean visited;
 
+    // cost function tells if the second node is directly reachable from the first.
+    // if there is a direct path from x to y, cost returns all the neighbours of x.
     private List<LNode> cost(LNode x, LNode y) {
         return x.neighbors.contains(y) ? x.neighbors : null;
     }
 
-    private void dfs(LNode start) {
+    private LNode dfs(LNode start, int value) {
         Stack<LNode> stack = new Stack<>();
         stack.push(start);
         while(!stack.isEmpty()) {
             LNode curr = stack.pop();
             if(!curr.visited) {
                 // check for termination condition
+                if(value == curr.data)
+                    return curr;
             }
             curr.visited = true;
             for(LNode node : curr.neighbors) {
                 stack.push(node);
             }
         }
+        return null;
     }
 
-    private void dfsRec(LNode curr) {
+    private LNode dfsRec(LNode curr, int value) {
         curr.visited = true;
+        if(value == curr.data)
+            return curr;
         for(LNode node : curr.neighbors) {
-            dfsRec(node);
+            return dfsRec(node, value);
         }
+        return null;
     }
 }
