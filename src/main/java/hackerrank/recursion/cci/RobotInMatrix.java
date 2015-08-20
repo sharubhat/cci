@@ -43,8 +43,8 @@ public class RobotInMatrix {
     }
 
     public static void main(String[] args) {
-        int x = 5;
-        int y = 6;
+        int x = 2;
+        int y = 3;
         System.out.println(numWays(x, y));
         System.out.println(fact(x + y) / (fact(x) * fact(y)));
     }

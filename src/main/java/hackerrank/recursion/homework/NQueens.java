@@ -8,23 +8,27 @@ import java.util.*;
 public class NQueens {
     public static void main(String args[] ) throws Exception {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-        for(int i = 1; i <= 10; i++) {
-            System.out.printf("Board size %d x %d%n", i, i);
-            List<char[][]> res = placeQueens(i);
-            if(res.size() == 0) {
+        for(int boardSize = 1; boardSize <= 10; boardSize++) {
+            System.out.printf("Board size %d x %d%n", boardSize, boardSize);
+            List<int[]> results = placeQueens(boardSize);
+            if(results.size() == 0) {
                 System.out.println("=======================");
                 System.out.println("Can't place queens");
             } else {
-                System.out.println(res.size() + " possible solutions");
+                System.out.println(results.size() + " possible solutions");
             }
-            for(char[][] r : res) {
+            for(int[] res : results) {
+                char[][] board = new char[boardSize][boardSize];
+                for(int k = 0;k < boardSize; k++) {
+                    board[k][res[k]] = 'X';
+                }
                 System.out.println("=======================");
-                for(int k = 0; k < r.length; k++) {
-                    for(int j = 0; j < r[0].length; j++) {
-                        if(r[k][j] != 'X')
+                for(int k = 0; k < board.length; k++) {
+                    for(int j = 0; j < board[0].length; j++) {
+                        if(board[k][j] != 'X')
                             System.out.print(". ");
                         else
-                            System.out.print(r[k][j] + " ");
+                            System.out.print(board[k][j] + " ");
                     }
                     System.out.println();
                 }
@@ -34,19 +38,15 @@ public class NQueens {
         }
     }
 
-    public static List<char[][]> placeQueens(int n) {
-        List<char[][]> res = new ArrayList<>();
+    public static List<int[]> placeQueens(int n) {
+        List<int[]> res = new ArrayList<>();
         placeQueensR(0, new int[n], res);
         return res;
     }
 
-    private static void placeQueensR(int row, int[] columns, List<char[][]> res) {
+    private static void placeQueensR(int row, int[] columns, List<int[]> res) {
         if(row == columns.length) {
-            char[][] result = new char[row][row];
-            for(int i = 0;i < row; i++) {
-                result[i][columns[i]] = 'X';
-            }
-            res.add(result.clone());
+            res.add(columns.clone());
         } else {
             for(int col = 0; col < columns.length; col++) {
                 if(checkValid(columns, row, col)) {

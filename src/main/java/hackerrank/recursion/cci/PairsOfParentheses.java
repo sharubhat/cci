@@ -19,10 +19,13 @@ public class PairsOfParentheses {
             System.out.println(str);
         }
         else {
+            // as long as there is a left parentheses available, you can go ahead with opening.
             if(l > 0) {
                 str[count] = '(';
                 printParR(l - 1, r, str, count + 1);
             }
+            // only if number of right parentheses remaining are more than left, then you can go ahead and close them
+            // otherwise you would end up closing before opening which would be wrong.
             if(r > l) {
                 str[count] = ')';
                 printParR(l, r - 1, str, count + 1);
