@@ -6,8 +6,8 @@ package hackerrank.list_stack_queues.epi;
  * Created by sharath on 8/19/15.
  */
 public class ReverseList {
-    private static class Node {
-        int data;
+    private static class Node<T> {
+        T data;
         Node next;
     }
 

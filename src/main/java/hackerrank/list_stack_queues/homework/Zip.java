@@ -1,10 +1,6 @@
 package hackerrank.list_stack_queues.homework;
 
 import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 /**
  * Zip a linkedlist from two ends.
@@ -14,69 +10,106 @@ import java.util.regex.*;
  */
 public class Zip {
     public static class LinkedListNode{
-        int val;
+        int data;
         LinkedListNode next;
-
-        LinkedListNode(int node_value) {
-            val = node_value;
-            next = null;
-        }
-    }
-
-    public static LinkedListNode _insert_node_into_singlylinkedlist(LinkedListNode head, int val){
-        if(head == null) {
-            head = new LinkedListNode(val);
-        }
-        else {
-            LinkedListNode end = head;
-            while (end.next != null) {
-                end = end.next;
-            }
-            LinkedListNode node = new LinkedListNode(val);
-            end.next = node;
-        }
-        return head;
     }
 
     static LinkedListNode Zip(LinkedListNode pList) {
         LinkedListNode slow = pList;
         LinkedListNode fast = pList;
+        LinkedListNode firstListEnd = pList;
 
-        while(pList != null && pList.next != null) {
+
+        while(slow != null && fast != null && fast.next != null) {
+            firstListEnd = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
+        // case of list with only one node
+        if(firstListEnd == pList) {
+            return pList;
+        }
+        firstListEnd.next = null;
+        // Reverse the second half of the list
+        slow = reverse(slow);
 
-        reverse(slow);
+        LinkedListNode result = null;
+        LinkedListNode curr = null;
+        while(pList != null && slow != null) {
+            // add pList entry
+            if(result == null) {
+                result = pList;
+                curr = pList;
+            } else {
+                curr.next = pList;
+                curr = curr.next;
+            }
+            pList = pList.next;
+            // add slow entry
+            curr.next = slow;
+            slow = slow.next;
+            curr = curr.next;
+        }
 
-        return null;
+        return result;
     }
 
-    static LinkedListNode reverse(LinkedListNode pList) {
-        return null;
+    static LinkedListNode reverse(LinkedListNode first) {
+        if(first == null || first.next == null)
+            return first;
+        LinkedListNode rest = first.next;
+        LinkedListNode reversed = reverse(rest);
+        first.next = null;
+        rest.next = first;
+        return reversed;
     }
 
     public static void main(String[] args) throws IOException {
-        Scanner in = new Scanner(System.in);
-        final String fileName = System.getenv("OUTPUT_PATH");
-        BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-        LinkedListNode res;
+        LinkedListNode n1 = new LinkedListNode();
+        LinkedListNode n2 = new LinkedListNode();
+        LinkedListNode n3 = new LinkedListNode();
+        LinkedListNode n4 = new LinkedListNode();
+        LinkedListNode n5 = new LinkedListNode();
+        LinkedListNode n6 = new LinkedListNode();
+        LinkedListNode n7 = new LinkedListNode();
+        LinkedListNode n8 = new LinkedListNode();
 
-        int _pList_size = Integer.parseInt(in.nextLine()), _pList_i;
-        int _pList_item;
-        LinkedListNode _pList = null;
-        for(_pList_i = 0; _pList_i < _pList_size; _pList_i++) {
-            _pList_item = Integer.parseInt(in.nextLine());
-            _pList = _insert_node_into_singlylinkedlist(_pList, _pList_item);
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        n6.next = n7;
+        n7.next = n8;
+
+        n1.data = 2;
+        n2.data = 5;
+        n3.data = 7;
+        n4.data = 3;
+        n5.data = 4;
+        n6.data = 1;
+        n7.data = 9;
+        n8.data = 0;
+
+        LinkedListNode curr = Zip(n1);
+
+        System.out.println("\nResult");
+
+        while(curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
         }
 
-        res = Zip(_pList);
-        while (res != null) {
-            bw.write(String.valueOf(res.val));
-            bw.newLine();
-            res = res.next;
-        }
 
-        bw.close();
+        LinkedListNode k1 = new LinkedListNode();
+
+        curr = Zip(k1);
+
+        System.out.println("\nResult");
+
+        while(curr != null) {
+            System.out.print(curr.data + " ");
+            curr = curr.next;
+        }
     }
 }
