@@ -1,40 +1,34 @@
 package hackerrank.list_stack_queues.epi;
 
 /**
- * Created by sharath on 8/20/15.
+ * Reverse sublist from start to finish, inclusive of finish
+ * Created by sharath on 8/25/15.
  */
-public class ReverseSubListNtoM {
+public class RevSublist {
     private static class Node {
         int data;
         Node next;
     }
 
-    private static Node reverseSubListNtoM(Node node, int n, int m) {
-        Node firstEnd = null;
-        Node curr = node;
-        int counter = 1;
-        while(curr != null && counter < n) {
-            firstEnd = curr;
-            curr = curr.next;
-            counter++;
-        }
-        firstEnd.next = reverseFirstN(curr, (m - n) + 1);
-        return node;
-    }
+    private static Node reverseSubListNtoM(Node L, int start, int finish) {
+        if(start == finish)
+            return L;
 
-    public static Node reverseFirstN(Node oldHead, int revEnd) {
-        int count = 1;
-        Node curr = oldHead;
-        Node reversed= null;
-        while(curr != null && count <= revEnd) {
-            Node freeNode = curr;
-            curr = curr.next;
-            freeNode.next = reversed;
-            reversed = freeNode;
-            count++;
+        Node subListHead = L;
+        int k = 1;
+        while(k++ < start) {
+            subListHead = subListHead.next;
         }
-        oldHead.next = curr;
-        return reversed;
+
+        // Reverse the sublist in place
+        Node subListIter = subListHead.next;
+        while(++start < finish) {
+            Node tmp = subListIter.next;
+            subListIter.next = tmp.next;
+            tmp.next = subListHead.next;
+            subListHead.next = tmp;
+        }
+        return L;
     }
 
     public static void main(String[] args) {
@@ -71,7 +65,7 @@ public class ReverseSubListNtoM {
         }
         System.out.println();
 
-        Node res = reverseSubListNtoM(n1, 3, 5);
+        Node res = reverseSubListNtoM(n1, 1, 5);
 
         curr = res;
         while(curr != null) {
@@ -79,4 +73,6 @@ public class ReverseSubListNtoM {
             curr = curr.next;
         }
     }
+
+
 }
