@@ -81,23 +81,21 @@ public class CopyAPostingList {
             }
 
             PNode<Integer> copied = copyPostingsList(L);
-            checkPostingsListEqual(L, copied);
+            if(!checkPostingsListEqual(L, copied))
+                System.out.println("Original and postings are not equal");
         }
     }
 
-    private static <T> void checkPostingsListEqual(PNode<T> a, PNode<T> b) {
+    private static <T> boolean checkPostingsListEqual(PNode<T> a, PNode<T> b) {
         while (a != null && b != null) {
-            System.out.print(a.data + " ");
-            assert (a.data == b.data);
-            assert (a.jump == null && b.jump == null ||
-                    (a.jump != null && b.jump != null && a.jump.data == b.jump.data));
-            if (a.jump != null) {
-                System.out.print(a.jump.data);
+            if(!(a.data == b.data && a.jump == null && b.jump == null ||
+                    (a.jump != null && b.jump != null && a.jump.data == b.jump.data))) {
+                return false;
             }
-            System.out.println("");
             a = a.next;
             b = b.next;
         }
+        return true;
     }
 
 }
