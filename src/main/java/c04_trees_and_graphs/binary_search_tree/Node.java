@@ -170,7 +170,7 @@ public class Node {
     public void preOderIterative() {
         Stack<Node> buffer = new Stack<>();
         Node current = this;
-        while(!(buffer.isEmpty() || current == null)) {
+        while(!buffer.isEmpty() || current != null) {
             if(current != null) {
                 printNode();
                 if(current.right != null)
