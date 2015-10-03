@@ -1,4 +1,4 @@
-package topcoder_dp.elementary;
+package hackerrank.dynamic_programming.topcoder_dp.elementary;
 
 import java.util.Arrays;
 import java.util.HashMap;

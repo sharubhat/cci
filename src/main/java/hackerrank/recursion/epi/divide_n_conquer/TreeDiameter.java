@@ -1,4 +1,4 @@
-package hackerrank.recursion.homework;
+package hackerrank.recursion.epi.divide_n_conquer;
 
 /**
  * Created by sharath on 8/18/15.

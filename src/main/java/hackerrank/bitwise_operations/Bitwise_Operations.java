@@ -11,7 +11,9 @@ public class Bitwise_Operations {
 
         System.out.println("One byte is 8 bits");
         System.out.printf("Java char is %d bit or %d bytes. -- Character.SIZE or Character.SIZE/8 %n", Character.SIZE, Character.SIZE/8);
+        System.out.printf("Java short is %d bit or %d bytes. -- Short.SIZE %n", Short.SIZE, Short.SIZE/8);
         System.out.printf("Java int is %d bit or %d bytes. -- Integer.SIZE %n", Integer.SIZE, Integer.SIZE/8);
+        System.out.printf("Java long is %d bit or %d bytes. -- Long.SIZE %n", Long.SIZE, Long.SIZE/8);
         System.out.printf("Java float is %d bit or %d bytes. -- Float.SIZE %n", Float.SIZE, Float.SIZE/8);
         System.out.printf("Java double is %d bit or %d bytes. -- Double.SIZE %n", Double.SIZE, Double.SIZE/8);
 

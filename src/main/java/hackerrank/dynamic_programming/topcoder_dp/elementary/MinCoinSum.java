@@ -1,8 +1,12 @@
-package topcoder_dp.elementary;
+package hackerrank.dynamic_programming.topcoder_dp.elementary;
 
 import java.util.Arrays;
 
 /**
+ * Given a list of N coins, their values (V1, V2, … , VN), and the total sum S.
+ * Find the minimum number of coins the sum of which is S (we can use as many coins of one type as we want),
+ * or report that it’s not possible to select coins in such a way that they sum up to S.
+ *
  * Created by sharath on 2/11/15.
  * Refer to topcoder tutorial for details
  */
@@ -11,7 +15,6 @@ public class MinCoinSum {
         int[] coins = {3, 5};
         int sum = 15;
         calculateMin(coins, sum);
-        calcMin(coins, sum);
     }
 
     // solution where to find sum[n] you find out coins needed for sum[m<n] and each coin in coins.
@@ -38,33 +41,5 @@ public class MinCoinSum {
             System.out.print(value + " ");
         }
         System.out.println();
-    }
-
-    // another approach. Set sum 0  to 0. Every iteration starts from sum 1 and considering each coin at a time.
-    // See if you can add coin to sum[m] and update min coin for sum[n] which can be achieved by sum[m] + coin[i] -> n = m+coins[i]
-
-    // TODO: The code has a bug, needs a fix.
-    private static void calcMin(int[] coins, int sum) {
-        int min[] = new int[sum + 1];
-        Arrays.fill(min, 1, min.length, Integer.MAX_VALUE);
-        for(int i = 0; i < coins.length; i++) {
-            for(int j = 0; j + coins[i] <= sum; j++) {
-                if(min[j] == Integer.MAX_VALUE && j < coins[i]) {
-                    min[j] = 0;
-                } else {
-                    if (j + coins[i] < sum) {
-                        int minN = min[j + coins[i]];
-                        int newMin = min[j] + 1;
-                        if (minN > newMin) {
-                            min[j + coins[i]] = newMin;
-                        }
-                    }
-                }
-            }
-        }
-        for (int i : min) {
-            int value = Integer.MAX_VALUE == i ? 0 : i;
-            System.out.print(value + " ");
-        }
     }
 }

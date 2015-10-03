@@ -1,4 +1,4 @@
-package topcoder_dp.elementary;
+package hackerrank.dynamic_programming.topcoder_dp.elementary;
 
 /**
  * Created by sharath on 2/12/15.

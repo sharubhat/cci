@@ -1,8 +1,33 @@
-package hackerrank.recursion.homework;
+package hackerrank.backtracking;
 
 import java.util.*;
 
 /**
+ * Solve the N-queen problem using recursion. (There may be other ways of solving this problem,
+ * but for the purpose of this exercise, please use recursion only).
+ *
+ * Problem statement:
+ * Place N queens on an NxN chessboard, such that no two queens are in line of attack of each other.
+ * In chess (and in real life too), a queen can move as far as she pleases, horizontally, vertically, or diagonally.
+ * Input: N
+ * Output: All possible arrangements of N queens on the board. Each arrangement can be represented by a matrix.
+ * Print the entire matrix, one per valid arrangement
+ *
+ * Example : For board of size 4,
+ *
+ * Board size 4 x 4 there are 2 possible solutions
+ *   =======================
+ *   . X . .
+ *   . . . X
+ *   X . . .
+ *   . . X .
+ *   =======================
+ *   . . X .
+ *   X . . .
+ *   . . . X
+ *   . X . .
+ *   =======================
+ *
  * Created by sharath on 8/17/15.
  */
 public class NQueens {

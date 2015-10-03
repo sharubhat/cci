@@ -1,6 +1,9 @@
-package topcoder_dp.elementary;
+package hackerrank.dynamic_programming.topcoder_dp.elementary;
 
 /**
+ * The longest Increasing Sub­sequence problem is to find the length of the longest sub­sequence
+ * in a given array such that all elements of the sub­sequence are sorted in increasing order.
+ *
  * Created by sharath on 2/12/15.
  * Refer to topcoder pdf for details
  */
@@ -13,7 +16,7 @@ public class LongestIncreasingSubsequence {
         System.out.println(lengthOfLongestSSeq(seq2));
     }
 
-    private static int lengthOfLongestSSeq(int[] seq) {
+    public static int lengthOfLongestSSeq(int[] seq) {
         int maxLengthSoFar = 0;
         int currMaxLength = 1;
         for(int i = 1; i < seq.length; i++) {

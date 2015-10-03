@@ -1,4 +1,4 @@
-package topcoder_dp.intermediate;
+package hackerrank.dynamic_programming.topcoder_dp.intermediate;
 
 /**
  * Created by sharath on 2/13/15.
