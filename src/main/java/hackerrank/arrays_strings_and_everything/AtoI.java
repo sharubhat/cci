@@ -1,11 +1,16 @@
 package hackerrank.arrays_strings_and_everything;
 
 /**
+ * Question to ask:
+ * 1. Can there be delimiters within the string such as space, underscore, comma or dots?
+ *
+ * Hint : You don't need to know ascii value for numbers or any character to solve this problem.
+ *
  * Created by sharath on 8/4/15.
  */
 public class AtoI {
     public static void main(String[] args) {
-        System.out.println(atoi("+ 143"));
+        System.out.println(atoi("- 143"));
     }
 
     static int atoi(String strInput) {
@@ -36,7 +41,7 @@ public class AtoI {
             }
         }
 
-        long finalResult = positive ? sum : (-1*sum);
+        long finalResult = positive ? sum : (-sum);
 
         if (finalResult > Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
@@ -45,8 +50,5 @@ public class AtoI {
             return Integer.MIN_VALUE;
 
         return (int) finalResult;
-
     }
-
-
 }

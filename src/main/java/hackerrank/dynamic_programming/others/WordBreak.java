@@ -1,4 +1,4 @@
-package hackerrank.backtracking;
+package hackerrank.dynamic_programming.others;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,19 +6,19 @@ import java.util.Set;
 /**
  * Given an string and a dictionary of words, find out if the input string can be broken into
  * a space separated sequence of one or more dictionary words.
- * 
+ *
  * Example:
- * 
+ *
  * dictionary = ["I" , "have", "Jain", "Sumit", "am", "this", "dog"]
- * 
+ *
  * String = "IamSumit"
  * Output: "I am Sumit"
- * 
+ *
  * String ="thisisadog"
  * Output : String can't be broken
- * 
+ *
  * Approach: Back tracking Naive Approach
- * 
+ *
  * Navigate the given input string.
  * Take a blank string and keep adding one character at a time to it.
  * Keep checking if the word exist in the dictionary.
@@ -26,29 +26,33 @@ import java.util.Set;
  * If any of the recursive call returns false then backtrack and remove the word from the answer string and
  * again keep adding the characters to string.
  * If all the recursive calls return true that means string has been broken successfully.
- * 
- * Created by sharath on 9/30/15.
+ *
+ * Created by sharath on 10/3/15.
  */
 public class WordBreak {
     public void wordBreak(String input, Set<String> dict) {
-        if (!wordBreak(input, "", dict))
+        if (!wordBreak(input, "", dict, new HashSet<>()))
             System.out.println("String can't be broken");
     }
 
-    private boolean wordBreak(String s, String sol, Set<String> dict) {
+    private boolean wordBreak(String s, String sol, Set<String> dict, Set<String> store) {
         if (s == null || s.isEmpty()) {
             System.out.println(sol);
             return true;
+        } else if(store.contains(s)) {
+            System.out.println(s);
+            return false;
         } else {
             String word = "";
             for (int i = 0; i < s.length(); i++) {
                 word += s.charAt(i);
                 if (dict.contains(word)) {
-                    if (wordBreak(s.substring(i + 1), sol + word + " ", dict)) {
+                    if (wordBreak(s.substring(i + 1), sol + word + " ", dict, store)) {
                         return true;
                     }
                 }
             }
+            store.add(s);
             return false;
         }
     }

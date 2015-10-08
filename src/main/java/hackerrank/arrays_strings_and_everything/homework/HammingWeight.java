@@ -4,6 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * In binary representation, hamming weight is the number of 1's.
+ * One way is to create a look up table for all one byte integers and then check each byte at a time for the given
+ * 4 byte integer. This is 4 look ups per given number.
+ *
+ * Other optimization can be storing the hamming weight of each number when it's calculated the first time so that if
+ * input stream has same number, we can look it up from the table. This would take less time than earlier approach.
+ *
+ *
  * Created by sharath on 9/6/15.
  */
 public class HammingWeight {
@@ -28,7 +36,7 @@ public class HammingWeight {
         System.out.println(store);
 
         int result = 0;
-        for(int i = 0; i< intArr.length; i++) {
+        for(int i = 0; i < intArr.length; i++) {
             int curr = intArr[i];
             for(int j = 0; j < 4 && curr != 0; j++) {
                 int lastByte = getLastByte(curr);
