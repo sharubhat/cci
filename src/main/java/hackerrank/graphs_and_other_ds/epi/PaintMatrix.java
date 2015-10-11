@@ -46,7 +46,7 @@ public class PaintMatrix {
     }
 
     public static void flipColorBFS(boolean[][] A, int x, int y) {
-        int[][] direction = new int[][]{new int[]{0, 1}, new int[]{0, -1}, new int[]{1, 0}, new int[]{-1, 0}};
+        int[][] direction = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
         boolean color = A[x][y];
         A[x][y] = !color;

@@ -11,7 +11,7 @@ import java.util.*;
  * Step 1: Figure out an approach to represent the problem itself.
  * a. Create a matrix that represents such a maze. Assign random ints to m and n of matrix.
  * b. Fill 0's and 1's randomly.
- * c. Crate a list of O's of whites.
+ * c. Crate a list of O's (of whites).
  * d. Select two random entries from whites to mark them and start and end.
  * 
  * Step 2: Solve the maze from step 1 to see if there exists a path from start to end.
@@ -29,27 +29,6 @@ public class SearchAMaze {
         }
 
         @Override
-        public boolean equals(Object o) {
-            if (this == o) {
-                return true;
-            }
-            if (o == null || getClass() != o.getClass()) {
-                return false;
-            }
-
-            Coordinate that = (Coordinate) o;
-
-            if (x != that.x) {
-                return false;
-            }
-            if (y != that.y) {
-                return false;
-            }
-
-            return true;
-        }
-
-        @Override
         public String toString() {
             return x + " " + y;
         }
@@ -60,30 +39,28 @@ public class SearchAMaze {
         LinkedList<Coordinate> path = new LinkedList<>();
         maze.get(s.x).set(s.y, 1);
         path.addFirst(s);
-        if (!searchMazeHelper(maze, s, e, path)) {
+        if (!searchMazeRec(maze, s, e, path)) {
             path.removeLast();
         }
         return path;
     }
 
     // Performs DFS to find a feasible path.
-    private static boolean searchMazeHelper(List<List<Integer>> maze,
+    private static boolean searchMazeRec(List<List<Integer>> maze,
                                             Coordinate cur, Coordinate e,
                                             LinkedList<Coordinate> path) {
         if (cur.equals(e)) {
             return true;
         }
 
-        List<? extends List<Integer>> shift =
-                Arrays.asList(Arrays.asList(0, 1), Arrays.asList(0, -1),
-                        Arrays.asList(1, 0), Arrays.asList(-1, 0));
+        int[][] shift = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-        for (List<Integer> s : shift) {
-            Coordinate next = new Coordinate(cur.x + s.get(0), cur.y + s.get(1));
+        for (int[] s : shift) {
+            Coordinate next = new Coordinate(cur.x + s[0], cur.y + s[1]);
             if (isFeasible(next, maze)) {
                 maze.get(next.x).set(next.y, 1);
                 path.addLast(next);
-                if (searchMazeHelper(maze, next, e, path)) {
+                if (searchMazeRec(maze, next, e, path)) {
                     return true;
                 }
                 path.removeLast();
