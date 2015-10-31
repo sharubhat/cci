@@ -1,6 +1,8 @@
 package hackerrank.arrays_strings_and_everything.cci.additional_problems;
 
 /**
+ * Reverse of string is same as the string itself.
+ *
  * Created by sharath on 8/12/14.
  */
 public class Palindrome {

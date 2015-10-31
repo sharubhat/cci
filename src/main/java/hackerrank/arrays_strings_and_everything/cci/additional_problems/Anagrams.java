@@ -10,6 +10,8 @@ import java.util.Set;
  * Anagrams can't be more than n!(n factorial) for a word of n characters.
  * However if there are duplicate characters, then number of anagrams will be lesser.
  *
+ * Time complexity is 2^n because height of recursion tree is n.
+ *
  */
 public class Anagrams {
     public Set<String> allAnagrams(String s) {
