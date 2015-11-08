@@ -1,4 +1,4 @@
-package hackerrank.arrays_strings_and_everything.epi;
+package hackerrank.arrays_strings_and_everything.epi.array.sort;
 
 import java.util.*;
 
@@ -90,7 +90,7 @@ public class DutchFlag {
         Color[] colors3 = {Color.RED, Color.BLUE, Color.BLUE, Color.RED, Color.GREEN, Color.GREEN,
                 Color.GREEN, Color.BLUE, Color.RED, Color.RED, Color.BLUE, Color.GREEN};
         list = Arrays.asList(colors3);
-        dutchFlagGroupedSubArrays(list, list.size()-1);
+        dutchFlagGroupedSubArrays(list, list.size() - 1);
         System.out.println(list);
     }
 }

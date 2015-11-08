@@ -1,4 +1,4 @@
-package hackerrank.arrays_strings_and_everything.epi;
+package hackerrank.arrays_strings_and_everything.epi.stocks;
 
 import java.util.Arrays;
 import java.util.List;
