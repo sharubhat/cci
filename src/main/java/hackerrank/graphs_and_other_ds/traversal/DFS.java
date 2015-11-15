@@ -53,6 +53,9 @@ public class DFS {
         System.out.print(s + " ");
         while(!stack.isEmpty())
         {
+            // it's easy if you can think of a tree. You want to add everything on left subtree from root to stack
+            // and start popping only when you reach the leaf. This implies, you only peek at the beginning and not pop.
+            // You pop when there is no more child vertex left.
             int curr = stack.peek();
             int unvisited = getUnvisitedChildVertex(G, curr);
 

@@ -17,8 +17,6 @@ public class BFS {
     /**
      * bfs using queue, adjacency list and visited boolean
      *
-     *
-     *
      * @param G
      * @param s
      */
