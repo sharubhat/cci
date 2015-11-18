@@ -1,6 +1,8 @@
 package hackerrank.graphs_and_other_ds.traversal;
 
 /**
+ * Number of connected components can easily be found by running dfs on all unvisited nodes.
+ *
  * Created by sharath on 11/11/15.
  */
 public class ConnectedComponents {

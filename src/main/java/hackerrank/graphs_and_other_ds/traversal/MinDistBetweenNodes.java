@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * For graphs with edges of same weight, bfs can be used to find the minimum distance from one node to another.
+ * Min distance between nodes in unweighted graph is total number of levels from node s to e which can be obtained by bfs
  *
  * Created by sharath on 11/12/15.
  */

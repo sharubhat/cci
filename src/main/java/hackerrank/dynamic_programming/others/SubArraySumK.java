@@ -1,4 +1,4 @@
-package hackerrank.arrays_strings_and_everything;
+package hackerrank.dynamic_programming.others;
 
 import java.util.*;
 

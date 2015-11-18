@@ -32,7 +32,7 @@ public class RobotInMatrix {
     }
 
     public static int numWays(int X, int Y) {
-        return doWays(0, 0, X, Y);
+        return doWays(0, 0, X-1, Y-1);
     }
 
     public static int doWays(int x_now, int y_now, int X, int Y) {
@@ -43,9 +43,9 @@ public class RobotInMatrix {
     }
 
     public static void main(String[] args) {
-        int x = 2;
-        int y = 3;
+        int x = 5;
+        int y = 5;
         System.out.println(numWays(x, y));
-        System.out.println(fact(x + y) / (fact(x) * fact(y)));
+        System.out.println(fact(x-1 + y-1) / (fact(x-1) * fact(y-1)));
     }
 }

@@ -24,7 +24,7 @@ public class DirectedGraph extends Graph {
             File file = new File(path.toUri());
             Scanner sc = new Scanner(file);
             this.vertices = sc.nextInt();
-            this.edges = sc.nextInt();
+            this.numEdges = sc.nextInt();
             // create base matrix
             this.matrix = new ArrayList<>(vertices);
             // create adjacency list

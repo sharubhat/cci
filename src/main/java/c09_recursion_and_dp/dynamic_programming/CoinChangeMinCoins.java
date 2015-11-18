@@ -28,55 +28,24 @@ public class CoinChangeMinCoins {
 	 * 5 else
 	 * 6 return 1 + min{Change(p − 1), Change(p − 5), Change(p − 10)}
 	 */
+
 	
-	static int count(int[] C, int S) {
-		//http://www.ccs.neu.edu/home/jaa/CSG713.04F/Information/Handouts/dyn_prog.pdf
-		int[] Min = new int[S + 1];
-		int[] Sum = new int[S + 1];
-		int min = 0;
-		int coin = 0;
-//		for(int index = 1; index < Min.length; index ++) {
-//			Min[index] = Integer.MAX_VALUE;
-//		}
-		for(int i = 1; i <= S; i++) {	// For every Sum 1 to S
-			min = Integer.MAX_VALUE;
-			for(int j = 0; j < C.length ; j++) {	//For every coin
-				if(C[j] <= i && (Min[i - C[j]] + 1) < Min[i]) {
-					min = Min[i - C[j]] + 1;
-					coin = C[j];
-				}
-			}
-			Min[i] = min;
-			Sum[i] = coin;
-		}
-		
-		int tmp = S;
-		while(tmp > 0) {
-			System.out.println(Sum[tmp]);
-//			tmp = tmp - C[Sum[tmp]];
-		}
-		return Min[S];
-	}
-	
-	static int count2(int[] C, int S) {
-		int[] Min = new int[S + 1];
+	static long count(int[] C, int S) {
+		long[] Min = new long[S + 1];
 		for(int index = 1; index < Min.length; index ++) {
 			Min[index] = Integer.MAX_VALUE;
 		}
 		for(int i = 1; i <= S; i++) {	// For every Sum 1 to S
-			for(int j = 0; j < C.length ; j++) {	//For every coin
-				if(C[j] <= i && (Min[i - C[j]] + 1) < Min[i]) {
-					Min[i] = Min[i - C[j]] + 1;
+			for(int j : C) {	//For every coin
+				if(j <= i) {
+					Min[i] = Math.min(Min[i], Min[i - j] + 1);
 				}
 			}
 		}
-		return Min[S];
+		return Min[S] < Integer.MAX_VALUE ? Min[S] : 0;
 	}
 	
 	public static void main(String[] args) {
-//		System.out.println(count(new int[] { 1, 3, 4 }, 15 ));
-//		if(count(new int[] { 3, 4 }, 5 ) == Integer.MAX_VALUE)
-//			System.out.println("You cant make the sum");
 		System.out.println("Num of coins " + count(new int[] { 3, 4 }, 15 ));
 	}
 
