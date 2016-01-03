@@ -6,6 +6,13 @@ import java.util.*;
  * Given an array of K strings length N each,
  * return all groups of strings that are anagrams. (Assume all lower case input)
  *
+ * Hint: Aim for O(KNlogN) time complexity and O(KN) space complexity.
+ *
+ * For better clarity : an example group of words that are anagrams could be,
+ * google, ooggle, ogogle, ggoole
+ *
+ * P.S.: String length begin N doesn't offer any advantage.
+ *
  * Created by sharath on 8/7/15.
  */
 public class GroupAnagrams {

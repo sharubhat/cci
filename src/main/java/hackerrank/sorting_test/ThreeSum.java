@@ -3,6 +3,11 @@ package hackerrank.sorting_test;
 import java.util.*;
 
 /**
+ * Given an array of N integers, find all triplets that sum to a given integer 0.
+ * Triples may not be consecutive.
+ * Array can include duplicates.
+ * Array is not necessarily sorted.
+ *
  * Created by sharath on 8/10/15.
  */
 public class ThreeSum {
