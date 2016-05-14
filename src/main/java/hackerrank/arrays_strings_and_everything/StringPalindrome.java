@@ -3,13 +3,14 @@ package hackerrank.arrays_strings_and_everything;
 import java.io.*;
 
 /**
- *
+ * Check if a given string is palindrome(returns same string when reversed) ignoring case and the following
+ * characters : '.', ',', '!', '-', ';', ':', '\'', '"', ' '
  *
  * Created by sharath on 8/1/15.
  */
 public class StringPalindrome {
 
-    static boolean isPalindrome(String strInput) {
+    private static boolean isPalindrome(String strInput) {
         if(strInput == null || strInput.isEmpty())
             return false;
         if(strInput.length() == 1)
@@ -56,8 +57,7 @@ public class StringPalindrome {
     }
 
     public static void main(String[] args) throws IOException{
-        StringPalindrome s = new StringPalindrome();
-        System.out.println(s.isPalindrome("Never a foot too far, even."));
-        System.out.println(s.isPalindrome("test"));
+        System.out.println(isPalindrome("Never a foot too far, even."));
+        System.out.println(isPalindrome("test"));
     }
 }
