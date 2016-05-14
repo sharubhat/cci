@@ -5,16 +5,21 @@ package hackerrank.arrays_strings_and_everything;
  * 1. Can there be delimiters within the string such as space, underscore, comma or dots?
  *
  * Hint : You don't need to know ascii value for numbers or any character to solve this problem.
+ * Also know what atoi in C does.
+ *      - anything starting with characters not in '+, -, [0-9]' returns 0.
+ *      - otherwise returns digits until a character is encountered.
  *
  * Created by sharath on 8/4/15.
  */
 public class AtoI {
     public static void main(String[] args) {
         System.out.println(atoi("- 143"));
+        System.out.println(atoi("- 143a45"));
+        System.out.println("Value : " + atoi(""));
     }
 
-    static int atoi(String strInput) {
-        if(strInput == null)
+    private static int atoi(String strInput) {
+        if(strInput == null || strInput.length() == 0)
             return 0;
 
         strInput = strInput.replace(" ", "");
