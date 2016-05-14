@@ -22,23 +22,19 @@ public class AtoI {
         if(strInput == null || strInput.length() == 0)
             return 0;
 
+        // if there are delimiters, do this for all delimiter characters
         strInput = strInput.replace(" ", "");
 
-        int i = 0;
         boolean positive = true;
         long sum = 0L;
 
-        if(strInput.charAt(i) == '-') {
+        if(strInput.charAt(0) == '-') {
             positive = false;
-            i++;
-        } else if(strInput.charAt(i) == '+'){
-            positive = true;
-            i++;
-        } else if(strInput.charAt(i) < '0' || strInput.charAt(i) > '9') {
+        } else if(strInput.charAt(0) < '0' || strInput.charAt(0) > '9') {
             return 0;
         }
 
-        for(int j = i; j < strInput.length(); j++) {
+        for(int j = 1; j < strInput.length(); j++) {
             if(strInput.charAt(j) >= '0' && (strInput.charAt(j) <= '9')) {
                 sum = (sum * 10) + (strInput.charAt(j) - '0');
             } else {
@@ -48,6 +44,7 @@ public class AtoI {
 
         long finalResult = positive ? sum : (-sum);
 
+        // remember, 'atoi' is required to return an integer; handle overflow
         if (finalResult > Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
 
