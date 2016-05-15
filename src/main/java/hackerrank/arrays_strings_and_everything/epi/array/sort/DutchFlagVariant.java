@@ -20,7 +20,7 @@ public class DutchFlagVariant {
             throw new IllegalArgumentException("Zero is not accepted in the data set.");
 
         int i = A.size(), pivot = 0;
-
+        // if false key needs to be in order, start from left of the array.
         for(int j = A.size() - 1; j >= 0; j--)
         {
             if(A.get(j) > pivot) {

@@ -12,7 +12,7 @@ import java.util.*;
  *
  * E.g:
  * [-3,0,-1,1,1,1,?,?,?,4,2] and pivot = 1;
- *          s     e     l
+ *             s       e       l
  *
  * ? at e is compared with pivot, there are 3 possibilities.
  * 1. ? < e, swap elements at s and e and advance both s and e
@@ -24,7 +24,7 @@ import java.util.*;
  * Created by sharath on 10/29/15.
  */
 public class DutchFlag {
-    public enum Color {RED, GREEN, BLUE}
+    private enum Color {RED, GREEN, BLUE}
 
     public static void dutchFlagPartition(final List<Color> A, final int pivotIndex) {
         Color pivot = A.get(pivotIndex);
@@ -45,10 +45,10 @@ public class DutchFlag {
      * Arrange such that each color is grouped, order of the entries doesn't matter.
      * Check if there is a better way than using left, right and center although they are done in O(n) time.
      *
-     * @param A
-     * @param pivotIndex
+     * @param A List of colors
+     * @param pivotIndex Index of color that needs to be treated as pivot
      */
-    public static void dutchFlagGroupedSubArrays(final List<Color> A, final int pivotIndex) {
+    private static void dutchFlagGroupedSubArrays(final List<Color> A, final int pivotIndex) {
         Color pivot = A.get(pivotIndex);
         int center = pivot.ordinal();
         int left, right;
