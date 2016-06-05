@@ -20,24 +20,28 @@ public class UniqueTest {
     public void uniqueFalse() {
         assertFalse("Test with duplicate characters", unique.hasAllUniqueChars("Hello"));
         assertFalse("Test with duplicate characters", unique.hasAllUniqueCharsUsingSet("Hello"));
+        assertFalse("Test with duplicate characters", unique.isUniqueChars("hello"));
     }
 
     @Test
     public void uniqueTrue() {
         assertTrue("Test all unique", unique.hasAllUniqueChars("zhdkgs"));
         assertTrue("Test all unique", unique.hasAllUniqueCharsUsingSet("zhdkgs"));
+        assertTrue("Test all unique", unique.isUniqueChars("zhdkgs"));
     }
 
     @Test
     public void uniqueForNull() {
         assertFalse("Test for null string", unique.hasAllUniqueChars(null));
         assertFalse("Test for null string", unique.hasAllUniqueCharsUsingSet(null));
+        assertFalse("Test for null string", unique.isUniqueChars(null));
     }
 
     @Test
     public void uniqueForEmptyString() {
         assertFalse("Test for empty string", unique.hasAllUniqueChars(""));
         assertFalse("Test for empty string", unique.hasAllUniqueCharsUsingSet(""));
+        assertFalse("Test for empty string", unique.isUniqueChars(""));
     }
 
     @After
