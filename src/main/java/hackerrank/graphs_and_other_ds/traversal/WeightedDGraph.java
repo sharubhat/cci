@@ -11,11 +11,11 @@ import java.util.*;
  */
 public class WeightedDGraph extends Graph {
     public WeightedDGraph() {
-        this(FileSystems.getDefault().getPath("/Users/sharath/Documents/git/cci/src/main/java/hackerrank/graphs_and_other_ds/traversal", "weighted_directed"));
+        this(FileSystems.getDefault().getPath("src/main/java/hackerrank/graphs_and_other_ds/traversal", "weighted_directed"));
     }
 
     public WeightedDGraph(String filename) {
-        this(FileSystems.getDefault().getPath("/Users/sharath/Documents/git/cci/src/main/java/hackerrank/graphs_and_other_ds/traversal", filename));
+        this(FileSystems.getDefault().getPath("src/main/java/hackerrank/graphs_and_other_ds/traversal", filename));
     }
 
     public WeightedDGraph(Path path) {
