@@ -28,6 +28,66 @@ import java.util.*;
  *   . X . .
  *   =======================
  *
+ *   Complexity analysis:
+ *
+ *   A naive approach is
+ *
+ *   while there are untried configurations
+ *   {
+ *      generate the next configuration of the n Queens;
+ *      if no two Queens can ‘take’ each other
+ *      {
+ *          print this configuration;
+ *      }
+ *  }
+ *
+ *  This approach generates n^n configurations resulting in O(n^n) complexity.
+ *
+ *  Taking into consideration that no two queens can be placed in same column, a high level revised algo will be
+ *  while there are untried configurations
+ *  {
+ *      generate the next configuration of the n Queens. . .
+ *      allowing no duplicates values in the configuration;
+ *      if no two Queens can ‘take’ each other
+ *      {
+ *          print this configuration;
+ *      }
+ *  }
+ *
+ * Recursion tree frames
+ *
+ *                                                      (root)
+ *                                /              /                  \                       \
+ *                     1                    2                           3                         4
+ *                 /   |   \            /   |   \                    /  |  \                   /  |  \
+ *              2      3     4       1     3     4               1    2    4              1    2    3
+ *             / \    / \    / \    / \    / \   / \
+ *            3   4  2  4  2  3   3  4  1  4 1  3
+ *            |   |  |   |  |   |   |  |  |   | |   |
+ *            4   3 4   2  3  2   4  3  4  1 3   1        ....and so on
+ *
+ * This takes up n * [n * (n-1) * (n-2).....(n-(n-1))] frames which amounts to n*n! configurations and so O(n*n!) time complexity.
+ *
+ * Another improvement is, instead of calculating each configuration, we can abandon the paths as soon as
+ * we find out that the path wont result in a solution.
+ *
+ * Recursion tree frames
+ *
+ *                                                      (root)
+ *                                /              /                  \                       \
+ *                     1                    2                           3                         4
+ *                 /   |   \            /   |   \                    /  |  \                   /  |  \
+ *              2      3     4       1     3     4               1    2    4              1    2    3
+ *                    / \    / \                 / \              / \
+ *                   2  4   2  3               1  3            2   4
+ *                           |                   |                    |
+ *                           3                   3                   2
+ *                                               |                    |
+ *                                              YES                 YES      ....and so on
+ *
+ * It's hard to calculate the exact time complexity of this algorithm at this point, however it can be further improved
+ * by avoiding the duplicate effort that results from symmetries in the problem.
+ *
  * Created by sharath on 8/17/15.
  */
 public class NQueens {
@@ -57,7 +117,6 @@ public class NQueens {
                     }
                     System.out.println();
                 }
-
             }
             System.out.println();
         }
@@ -65,16 +124,21 @@ public class NQueens {
 
     public static List<int[]> placeQueens(int n) {
         List<int[]> res = new ArrayList<>();
+        // since the exact positions of n queens on the chessboard can be fully specified by the column numbers
+        // (an n-tuple) of the n queens, they can be represented by a linear array of size n.
+        // res holds all such n-tuple of placements.
         placeQueensR(0, new int[n], res);
         return res;
     }
 
     private static void placeQueensR(int row, int[] columns, List<int[]> res) {
+        // columns array holds configuration corresponding to current path.
+        // if we have reached the last row, it means we have found a solution.
         if(row == columns.length) {
             res.add(columns.clone());
         } else {
             for(int col = 0; col < columns.length; col++) {
-                if(checkValid(columns, row, col)) {
+                if(canPlaceQueen(columns, row, col)) {
                     columns[row] = col;
                     placeQueensR(row + 1, columns, res);
                 }
@@ -82,7 +146,7 @@ public class NQueens {
         }
     }
 
-    private static boolean checkValid(int[] columns, int row1, int col1) {
+    private static boolean canPlaceQueen(int[] columns, int row1, int col1) {
         for(int row2 = 0; row2 < row1; row2++) {
             int col2 = columns[row2];
 
