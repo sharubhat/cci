@@ -40,6 +40,7 @@ public class StackWithMax<E extends Comparable> extends Stack<E> {
 
     @Override
     public boolean empty() {
+        maxStack.empty();
         return super.empty();
     }
 
