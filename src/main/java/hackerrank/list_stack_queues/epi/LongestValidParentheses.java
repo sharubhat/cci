@@ -12,12 +12,14 @@ public class LongestValidParentheses {
         for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '(') {
                 stack.push(i);
-            } else if(stack.isEmpty()) {
-                end = i;
             } else {
-                stack.pop();
-                int start = stack.isEmpty()? end : stack.peek();
-                maxLength = Math.max(maxLength, i-start);
+                if(stack.isEmpty()) {
+                    end = i;
+                } else {
+                    stack.pop();
+                    int start = stack.isEmpty()? end : stack.peek();
+                    maxLength = Math.max(maxLength, i-start);
+                }
             }
         }
         return maxLength;

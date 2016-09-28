@@ -3,6 +3,10 @@ package hackerrank.recursion.cci;
 /**
  * Print all valid combinations of n pairs of parentheses.
  *
+ * Brute force is to generate all permutations and check for valid combinations.
+ * An improvement over this is to walk down the recursion tree and backtrack when you find that
+ * the combinations become invalid.
+ *
  * E.g : input 3
  * output: ()()(),()(()),(())(),((())),(()()),
  *

@@ -6,8 +6,11 @@ package hackerrank.recursion.homework;
  * e.g:
  * for n = 1 ==> 1 (just root)
  * for n = 2 ==> 2 (1. root->right 2. root->left)
- * for n = 3 ==> 5 (1. root->right->right 2. root->right->left 3. root->left->left
- *                  4. root->left->right 5. root->left->right
+ * for n = 3 ==> 5 (1. root->right->right
+ *                      2. root->right->left
+ *                      3. root->left->left
+ *                      4. root->left->right
+ *                      5. root->left->right)
  *
  * The series is called Catalan numbers. There is a standard formula. However solve this problem recursively.
  *

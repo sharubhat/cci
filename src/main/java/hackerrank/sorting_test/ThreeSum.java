@@ -13,7 +13,7 @@ import java.util.*;
 public class ThreeSum {
     public static void main(String[] args) {
         int[] numbers = {2, 4, 3, 5, 7, 8, 9};
-        int[] numbersWithDuplicates = {2, 4, 3, 5, 6, -2, 4, 7, 8, 9};
+        int[] numbersWithDuplicates = {2, 4, 3, 5, 6, -2, 4, -8, 7, 8, 9};
         System.out.println(Arrays.toString(threeSum(numbers)));
         System.out.println(Arrays.toString(threeSum(numbersWithDuplicates)));
     }

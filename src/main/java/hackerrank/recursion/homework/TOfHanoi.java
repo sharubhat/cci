@@ -3,6 +3,10 @@ package hackerrank.recursion.homework;
 import java.util.Random;
 
 /**
+ * Given 3 pegs, first peg containing n rings with smallest on top to largest at the bottom,
+ * other two pegs being empty, move all the rings to last peg with the condition that
+ * a larger peg is never placed above the smaller peg.
+ *
  * Created by sharath on 8/15/15.
  */
 public class TOfHanoi {

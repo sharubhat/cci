@@ -1,6 +1,5 @@
 package hackerrank.sorting_test.extra;
 
-
 import java.util.*;
 
 /**
@@ -23,9 +22,10 @@ public class TripletsSumLessThanT {
                 HashSet<Integer> set = new HashSet<>();
                 set.add(d[i]);
                 set.add(d[j]);
-                store.put(d[j] + d[j] , set);
+                store.put(d[j] + d[j], set);
             }
         }
+        System.out.println(store);
 
         for(int i = 0; i < d.length; i++) {
             for (Map.Entry<Integer, HashSet<Integer>> e : store.entrySet()) {
@@ -36,9 +36,7 @@ public class TripletsSumLessThanT {
                 }
             }
         }
-
+        System.out.println(res);
         return res.size();
-
     }
-
 }

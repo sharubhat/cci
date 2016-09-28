@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Given an array of integers, find any two numbers within the given array that sum to a number k.
+ *
+ * Hint: Sort the numbers first. Start by adding left most number and right most number.
+ * If the sum is equal to k, print the numbers. Else, depending on the sum, increment left or decrement right.
+ * Note: This approach assumes there are no duplicates.
+ *
  * Created by sharath on 8/10/15.
  */
 public class TwoSum {

@@ -5,8 +5,11 @@ import java.util.Arrays;
 /**
  * Print all permutations of given array.
  *
- * T(n) = O(n*n!)
- * S(n) = O(n)
+ * T(n) = O(n*n!) -> there are n! leaves in the tree and each leaf is of size n.
+ *                       program can not run faster than the size of the output.
+ * S(n) = O(n)  -> height of the tree.
+ *
+ * Hint: Look at n-queens problem to understand time complexity and recursion tree.
  *
  * Created by sharath on 8/14/15.
  */
@@ -17,8 +20,11 @@ public class ArrayPermutations {
             System.out.println(Arrays.toString(arr));
 
         for(int j = i; j < arr.length; j++) {
+            // allow arr[i] to be placed at every index and permute the rest.
+            // or you could say, give every element(a[j]) a chance to be the first element and permute the rest.
             swap(arr, i, j);
             printPermR(arr, i + 1);
+            // reset the array back to original state before giving arr[j+1] it's chance.
             swap(arr, i, j);
         }
     }

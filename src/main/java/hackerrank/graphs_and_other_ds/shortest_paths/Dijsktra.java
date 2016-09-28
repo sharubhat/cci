@@ -19,7 +19,7 @@ import java.util.*;
  * by using Fibonacci heap.
  *
  * Time complexity calculation:
- * 1. V vertices get insrted into binary heap - O(V logV)
+ * 1. V vertices get inserted into binary heap - O(V logV)
  * 2. V extract min operation - O(V)
  * 3. E update key operations (delete + insert) - O(E logE)
  * So over all complexity is O(VlogV + ElogE)

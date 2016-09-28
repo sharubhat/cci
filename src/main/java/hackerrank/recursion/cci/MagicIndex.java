@@ -2,6 +2,11 @@ package hackerrank.recursion.cci;
 
 /**
  * Magic index in an array is an index where the element in the index is same as index.
+ * Write a function that checks if the given array has magic index.
+ *
+ * Brute force is to check every element. O(n) time complexity.
+ * Binary search approach can reduce the complexity to O(logn). If middle element is smaller than middle index,
+ * then check only right half and vice versa.
  *
  * Created by sharath on 8/16/15.
  */

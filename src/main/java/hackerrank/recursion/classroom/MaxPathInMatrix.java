@@ -5,9 +5,13 @@ package hackerrank.recursion.classroom;
  * Only right and downwards movements are possible.
  *
  * time complexity is O(2^(m+n)).
- * Accurate number of steps needed is (l!)/(m-1)!(n-1)! where l = (m-1) + (n-1)
+ * Accurate number of steps needed is (l!)/(m-1)!(n-1)! where l = (m-1) + (n-1) is the length of the path.
  *
- * Space complexity is O(l) = O(m+n)
+ * Note that the recursion tree is not full binary tree because some paths don't split once they reach either m or n.
+ * So the size of the tree is not exactly 2^n. Whatever path is taken, it has same number of right and downward movements
+ * which is m-1, n-1, just their ordering differs.
+ *
+ * Space complexity is O(l) = O(m+n) which is height of recursion tree(m-1+n-1)
  *
  * Created by sharath on 8/14/15.
  */

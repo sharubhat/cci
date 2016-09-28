@@ -19,6 +19,8 @@ public class ValidateRegexDemo {
         input.add("192-83-7465");
         input.add("192837465");
 
+        String clientId = "55555456543212999474257,1455840673000000000059000000,?ci=30000001&st=1455840672531&cjvf=1&tid=7&cg=Burlingame";
+
         for(String ssn : input) {
             // P.S: Java requires \\ for \ when pattern is given as string
             // ^		match the beginning of the line
@@ -29,5 +31,8 @@ public class ValidateRegexDemo {
             if(ssn.matches("^(\\d{3})-?(\\d{2})-?(\\d{4})$"))
                 System.out.println("Found a good SSN - " + ssn);
         }
+
+        if(clientId.matches("(.*ci=.*59000001.*&tid=(4|5).*)|(.*ci=.*30000001.*&tid=(4|5).*)"))
+            System.out.println("Found matching string");
     }
 }
