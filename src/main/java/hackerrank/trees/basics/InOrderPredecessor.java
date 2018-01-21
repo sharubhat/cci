@@ -23,31 +23,28 @@ public class InOrderPredecessor {
     }
 
     public static Node inorderPredecessor(Node root, int k) {
-        Node successor = null;
-        if(root != null) {
-            Node curr = root;
-            while(curr.data != k) {
-                if(curr.data < k) {
-                    successor = curr;
-                    curr = curr.right;
-                } else {
-                    curr = curr.left;
-                }
-            }
-            if(curr != null && curr.left != null) {
-                successor = findMax(curr.left);
-            }
-        }
-        return successor;
-    }
-
-    private static Node findMax(Node root) {
-        if(root != null) {
-            while(root.right != null) {
+        Node predecessor = null;
+        while (root != null) {
+            if (root.data > k) {
+                root = root.left;
+            } else if (root.data <= k) {
+                predecessor = root;
                 root = root.right;
             }
         }
-        return root;
+        return predecessor;
+    }
+
+    public static Node predecessorRec(Node root, int k) {
+        if (root != null) {
+            if (root.data < k) {
+                Node predecessor = predecessorRec(root.right, k);
+                return predecessor == null ? root : predecessor;
+            } else {
+                return predecessorRec(root.left, k);
+            }
+        }
+        return null;
     }
 
     public static void main(String[] args) {
@@ -60,6 +57,14 @@ public class InOrderPredecessor {
         System.out.println("inorderPredecessor of 30 is " + inorderPredecessor(root, 30));
         System.out.println("inorderPredecessor of 35 is " + inorderPredecessor(root, 35));
         System.out.println("inorderPredecessor of 40 is " + inorderPredecessor(root, 40));
+
+        System.out.println("inorderPredecessor of 10 is " + predecessorRec(root, 10));
+        System.out.println("inorderPredecessor of 15 is " + predecessorRec(root, 15));
+        System.out.println("inorderPredecessor of 20 is " + predecessorRec(root, 20));
+        System.out.println("inorderPredecessor of 25 is " + predecessorRec(root, 25));
+        System.out.println("inorderPredecessor of 30 is " + predecessorRec(root, 30));
+        System.out.println("inorderPredecessor of 35 is " + predecessorRec(root, 35));
+        System.out.println("inorderPredecessor of 40 is " + predecessorRec(root, 40));
     }
 
     private static Node createBST() {
