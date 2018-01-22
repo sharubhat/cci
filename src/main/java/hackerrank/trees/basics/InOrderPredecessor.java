@@ -25,11 +25,11 @@ public class InOrderPredecessor {
     public static Node inorderPredecessor(Node root, int k) {
         Node predecessor = null;
         while (root != null) {
-            if (root.data > k) {
-                root = root.left;
-            } else if (root.data <= k) {
+            if (root.data < k) {
                 predecessor = root;
                 root = root.right;
+            } else {
+                root = root.left;
             }
         }
         return predecessor;
