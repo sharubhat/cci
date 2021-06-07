@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by sharath on 3/29/15.
- *
+ * <p>
  * Threads should print alternatively.
  * This is better than other solution because
  * 1. Using lock instead of synchronized block is a win in terms of performance,
@@ -14,39 +14,39 @@ import java.util.concurrent.locks.ReentrantLock;
  * select the thread that has been waiting for the most time ensuring proper synchronization.
  */
 public class PrintLock implements Runnable {
-    private Lock lock;
-    private int count;
+  private final Lock lock;
+  private int count;
 
-    public PrintLock() {
-        this.lock = new ReentrantLock(true);
-    }
+  public PrintLock() {
+    this.lock = new ReentrantLock(true);
+  }
 
-    @Override
-    public void run() {
-        while(true) {
-            lock.lock();
-            try {
-                if (count < 11) {
-                    System.out.printf("%s - %d\n", Thread.currentThread().getName(), count);
-                    count++;
-                } else {
-                    break;
-                }
-            } finally {
-                lock.unlock();
-            }
+  @Override
+  public void run() {
+    while (true) {
+      lock.lock();
+      try {
+        if (count < 11) {
+          System.out.printf("%s - %d%n", Thread.currentThread().getName(), count);
+          count++;
+        } else {
+          break;
         }
+      } finally {
+        lock.unlock();
+      }
     }
+  }
 
-    public static void main(String[] args) {
-        PrintLock printLock = new PrintLock();
+  public static void main(String[] args) {
+    PrintLock printLock = new PrintLock();
 
-        Thread t1 = new Thread(printLock);
-        Thread t2 = new Thread(printLock);
+    Thread t1 = new Thread(printLock);
+    Thread t2 = new Thread(printLock);
 
-        t1.start();
-        t2.start();
-    }
+    t1.start();
+    t2.start();
+  }
 }
 
 

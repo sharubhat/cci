@@ -14,9 +14,14 @@ public class Print implements Runnable {
   @Override
   public void run() {
     while (count.get() < 11) {
+      // double checking is necessary within synchronized block because, both threads can simultaneously check count
+      // when it's value is 10, however, the thread that acquires the monitor lock will increment it and the next
+      // thread will read the value 11 by the time it prints.
       synchronized (this) {
-        System.out.printf("%s  - %d%n", Thread.currentThread().getName(), count.get());
-        count.incrementAndGet();
+        if (count.get() < 11) {
+          System.out.printf("%s  - %d%n", Thread.currentThread().getName(), count.get());
+          count.incrementAndGet();
+        }
       }
       // If there is no sleep then thread which has first acquired mutex will start processing the
       // next instruction before another thread can acquire the lock.
