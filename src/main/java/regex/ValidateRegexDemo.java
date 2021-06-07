@@ -19,7 +19,7 @@ public class ValidateRegexDemo {
         input.add("192-83-7465");
         input.add("192837465");
 
-        String clientId = "55555456543212999474257,1455840673000000000059000000,?ci=30000001&st=1455840672531&cjvf=1&tid=7&cg=Burlingame";
+        String clientId = "tid=4&ci=90232642%3B20000000%3B20000001%3B30000001%3B30004001%3B90380716%3B90380768%3B90380755%3B90380742%3B90380729%3B32000001%3B32004001%3B32000091%3B72009999%3B80000001%3B30001001%3B50280000%7CDEMO%3B59000000%7CcmTest9%3B59040000%7CcmTestL12%3B50000000%7CSuper%20Leisure%20International%3B50010000%7CSuper%20Leisure%20International&vn2=e4.0&st=1475609250355&vn1=4.18.138&ec=utf-8&pr=FULO-0101&pm=White%20Fabric%20Roll%20Arm%20Chaise&qt=1&bp=499.99&cg=Lounge%20Chairs&at=5&pc=N&rnd=1475609977138&ul=http%3A%2F%2Fretail-demo.coremetrics.com%2FLiveDemo%2FshoppingCart&rf=http%3A%2F%2Fretail-demo.coremetrics.com%2FLiveDemo%2Fproduct%3Fcatalog_id%3D1%26category_id%3D1%26prod_id%3D1%26cm_vc%3DCARTZ1&cjen=1&cjuid=91238989268514599699370&cjsid=1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938|1472582938||1472497682|1472500216|1472497682&cjvf=33|33|33|33|33|33|33|33|33|33|33|33|33|33|33|33|33||33|33|33";
 
         for(String ssn : input) {
             // P.S: Java requires \\ for \ when pattern is given as string
@@ -32,7 +32,10 @@ public class ValidateRegexDemo {
                 System.out.println("Found a good SSN - " + ssn);
         }
 
-        if(clientId.matches("(.*ci=.*59000001.*&tid=(4|5).*)|(.*ci=.*30000001.*&tid=(4|5).*)"))
+        if(clientId.matches("(^(?=.*ci=.*59000000.*)(?=.*tid=(4|5)).*$)|(^(?=.*ci=.*30000001.*)(?=.*tid=(4|5)).*$)")) {
+            System.out.println("Matched");
+        }
+        if(clientId.matches("(.*ci=.*59000000.*&tid=(4|5).*)|(.*ci=.*30000001.*&tid=(4|5).*)"))
             System.out.println("Found matching string");
     }
 }

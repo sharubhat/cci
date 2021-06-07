@@ -4,16 +4,6 @@ package hackerrank.trees.basics;
  * Created by sharath on 9/15/15.
  */
 public class TreeBasics {
-    private static class Node {
-        Node left;
-        Node right;
-        int data;
-
-        public Node(int data) {
-            this.data = data;
-        }
-    }
-
     public static int height(Node root) {
         int leftHeight = (root.left == null)? 0 : height(root.left);
         int rightHeight = (root.right == null)? 0 : height(root.right);

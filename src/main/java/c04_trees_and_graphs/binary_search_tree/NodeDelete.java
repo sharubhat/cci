@@ -4,13 +4,18 @@ package c04_trees_and_graphs.binary_search_tree;
  * Created by sharath on 8/23/14.
  */
 public class NodeDelete {
+    class Node {
+        public int data;
+        public Node left;
+        public Node right;
+    }
 
-    public boolean deleteNode(Node root, int key) {
+    public void deleteNode(Node root, int key) {
         Node curr = root;
         Node parent = root;
         boolean isLeftChild = false;
 
-        // case 1: Node to be deleted has no children
+        // get to the node with key
         while(curr.data != key) {
             parent = curr;
             if(key < curr.data) {
@@ -21,9 +26,10 @@ public class NodeDelete {
                 curr = curr.right;
             }
             if(curr == null)
-                return false;
+                throw new RuntimeException("Key not found");
         }
 
+        // case 1: Node to be deleted has no children
         // lets go ahead and delete it for good
         if(curr.left == null && curr.right == null) {
             if(curr == root)
@@ -58,7 +64,7 @@ public class NodeDelete {
         // replace the node with in order successor
         else {
             // get successor of node to delete (current)
-            Node successor = getSuccessor(curr);
+            Node successor = inorderSuccessor(curr);
             // connect parent of current to successor instead
             if(curr == root)
                 root = successor;
@@ -69,7 +75,6 @@ public class NodeDelete {
             // connect successor to current node's left child
             successor.left = curr.left;
         }
-        return true;
     }
 
     // returns node with next-highest value after delNode
@@ -91,6 +96,20 @@ public class NodeDelete {
             // make connections
             successorParent.left = successor.right;
             successor.right = delNode.right;
+        }
+        return successor;
+    }
+
+    public static Node inorderSuccessor(Node root) {
+        Node successor = null;
+        int key = root.data;
+        while(root != null) {
+            if (root.data > key) {
+                successor = root;
+                root = root.left;
+            } else {
+                root = root.right;
+            }
         }
         return successor;
     }

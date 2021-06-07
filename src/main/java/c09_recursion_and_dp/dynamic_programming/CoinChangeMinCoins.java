@@ -6,7 +6,7 @@ package c09_recursion_and_dp.dynamic_programming;
  * http://www.topcoder.com/tc?d1=tutorials&d2=dynProg&module=Static
  * 
  * You are eventually finding minimum coins for all Sum from 1 to S
- * So, you need a Min array that can hold min coins upto S, so create Min[S+1]
+ * So, you need a Min array that can hold min coins up to S, so create Min[S+1]
  * Set Min[i] equal to Infinity for all of i except Min[0]
  * Start with having a solution of 0 coins for sum 0.
  * Min[0]=0 

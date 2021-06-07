@@ -7,21 +7,6 @@ package hackerrank.trees.basics;
  * Created by sharath on 9/16/15.
  */
 public class InOrderPredecessor {
-    private static class Node {
-        Node left;
-        Node right;
-        int data;
-
-        public Node(int data) {
-            this.data = data;
-        }
-
-        @Override
-        public String toString() {
-            return data + " ";
-        }
-    }
-
     public static Node inorderPredecessor(Node root, int k) {
         Node predecessor = null;
         while (root != null) {

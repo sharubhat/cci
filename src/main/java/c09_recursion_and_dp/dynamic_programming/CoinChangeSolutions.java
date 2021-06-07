@@ -3,8 +3,7 @@ package c09_recursion_and_dp.dynamic_programming;
 import java.util.ArrayList;
 
 /**
- * http://www.codeproject.com/Articles/31002/Coin-Change-Problem-Using-Dynamic-
- * Programming
+ * http://www.codeproject.com/Articles/31002/Coin-Change-Problem-Using-Dynamic-Programming
  * 
  * Coin change is the problem of finding the number of ways to make change for a
  * target amount given a set of denominations. It is assumed that there is an

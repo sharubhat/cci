@@ -143,5 +143,6 @@ public class Marketing {
     public static void main(String[] args) {
         Marketing m = new Marketing();
         System.out.println(m.howMany(new String[]{"1 4", "2", "3", "0", ""}));
+        System.out.println(m.howMany(new String[]{"1", "2", "0"}));
     }
 }

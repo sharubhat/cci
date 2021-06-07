@@ -12,11 +12,12 @@ public class BitSetDemo {
 
         // setting some bits
         System.out.println(bits1.length());
-        for(int i = 0; i < 16; i++) {
+        for(int i = 0; i < 512; i++) {
             if(i % 2 == 0) bits1.set(i);
             if(i % 5 != 0) bits2.set(i);
         }
         System.out.println(bits1.length());
+        System.out.println(bits2.length());
 
         System.out.println("Initial pattern in bits1:");
         System.out.println(bits1);

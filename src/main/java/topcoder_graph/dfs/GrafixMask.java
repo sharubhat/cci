@@ -81,6 +81,15 @@ import java.util.*;
  * Created by sharath on 6/2/15.
  */
 public class GrafixMask {
+    private static class Point {
+        int x, y;
+
+        Point(int xx, int yy) {
+            x = xx;
+            y = yy;
+        }
+    }
+
     public int[] sortedAreas(String[] rectangles) {
         // prepare an open masking layer
         boolean[][] fill = new boolean[400][600];
@@ -147,7 +156,7 @@ public class GrafixMask {
 
         while(!s.isEmpty()) {
             Point top = s.pop();
-            // Check to ensure that we are within the bounds of the grid, if not, return 0
+            // Check to ensure that we are within the bounds of the grid
             if (top.x < 0 || top.x >= 400) continue;
             // Similar check for y
             if (top.y < 0 || top.y >= 600) continue;
@@ -176,14 +185,5 @@ public class GrafixMask {
         for(int i = 0; i < res.length; i++) {
             System.out.println(res[i]);
         }
-    }
-}
-
-class Point {
-    int x, y;
-
-    Point(int xx, int yy) {
-        x = xx;
-        y = yy;
     }
 }

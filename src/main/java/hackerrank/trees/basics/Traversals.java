@@ -32,17 +32,6 @@ import java.util.Stack;
  * Created by sharath on 9/9/15.
  */
 public class Traversals {
-
-    private static class Node {
-        Node left;
-        Node right;
-        int data;
-
-        public Node(int data) {
-            this.data = data;
-        }
-    }
-
     public static void print(Node n) {
         System.out.print(n.data + " ");
     }
